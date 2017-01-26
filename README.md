@@ -1,2 +1,3 @@
 # SpaceShooter
-Space shooter where user directs his/her starship throught deep-space, fight with enemies and tries to avoid obstacles 
++ Simple SpaceShooter. Player explores deep space with his/her ship, fights with evil aliens 
++ and gains score for destroying enemy's ships.
