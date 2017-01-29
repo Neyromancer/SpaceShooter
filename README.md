@@ -1,8 +1,10 @@
 # SpaceShooter
 + Simple SpaceShooter. Player explores deep space with his/her ship, fights with evil aliens 
 + and gains score for destroying enemy's ships.
+
 /***************** SpaceShip shooter ************************/
-        * 2d space exploring game.
+
+        * 2d space exploring game
         * from the beginning the game is simple and slow although
           with time it becomes more and more difficult.
         * Main menu to choose the difficulties of the game ( Simple - Extreme ),
@@ -36,9 +38,13 @@
                    
         * Background: background-pic ( deep space ), side asteroids ( static, thier appearance is different from non static asteroids ), 
           other static objects and non static visible very small particles ( can't be interated with ). 
+          
   /****************************************************************************************************/
+  
   Classes:
+  
      Game:
+     
       Descript: keep manage the entire game
       Inhreit: QGraphicsView 
       Attributes:
