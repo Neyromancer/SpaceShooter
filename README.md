@@ -31,10 +31,13 @@
                 ** enmies also have particular amount of life, which depends on the enemie's type and game's difficulty ( not   
                     shown )
         * The user's ship can:
-                ** move left - right, back and forward.
+                + move left - right, back and forward.
                 ** from the beginning it possesses a very simple weapon ( never expired ) and a countabe
                    number of missiles ( can be refilled ) which are stronger and move faster than main
                    weapon but they can be fired in sequence only with a delay.
+                - set liser beams' directions in accordance with the ship's direction 
+                - all frames from file should come
+                - ship stops to fire, it has to continue moving instead
                    
         * Background: background-pic ( deep space ), side asteroids ( static, thier appearance is different from non static asteroids ), 
           other static objects and non static visible very small particles ( can't be interated with ). 
@@ -50,15 +53,15 @@
       Attributes:
         - health
         - score
-        - timre
-        - scene
-        - player ( user )
+        + timre
+        + scene
+        + player ( user )
         - enemy
       Methods:
         - startGame();
         - pauseGame();
         - quitGame();
-        - createEnemies();
+        + createEnemies();
         
      SpaceShip:
       Descript: describe ships, will be inherited by player's and  enemies' spaceships
@@ -67,8 +70,8 @@
         - lifeSpan  // amount of life possessed
       Methods:
         - getLifeSpan();
-        - move();
-        - fire();
+        + move();
+        + fire();
         
      Palyer's SpaceShip:
       Descript: Describe ship controlled by player
