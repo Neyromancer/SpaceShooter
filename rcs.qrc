@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/">
+        <file>texture/Background/background01.jpg</file>
+        <file>texture/Mobs/User/Blue_spaceship_blue_animation_1.png</file>
+        <file>texture/Background/background03.png</file>
+        <file>texture/Effects/Particles/ball-lightning.png</file>
+        <file>texture/Weapons/LaserBeam01.png</file>
+        <file>texture/Mobs/User/Right2.png</file>
+        <file>texture/Mobs/User/Left2.png</file>
+        <file>texture/Mobs/User/Up2.png</file>
+        <file>texture/Mobs/User/Down2.png</file>
+    </qresource>
+</RCC>
