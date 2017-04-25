@@ -1,0 +1,14 @@
+*.[oa]
+*~
+*.exe
+*.swp
+*.user
+
+*.sql
+*.sqlite
+
+# ignore all files in backup directory
+backup/
+src/build-SpaceShooter-Desktop_Qt_5_7_0_GCC_64bit-Debug/
+
+sour*

@@ -1,0 +1,4 @@
+#ifndef ENEMYSHIP_HPP
+#define ENEMYSHIP_HPP
+
+#endif // ENEMYSHIP_HPP

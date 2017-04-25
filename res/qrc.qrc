@@ -1,0 +1,159 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Music/Background/Loading_Loop.wav</file>
+        <file>Music/Shooting/Gun+1.wav</file>
+        <file>texture/Background/background.jpg</file>
+        <file>texture/Background/background01.jpg</file>
+        <file>texture/Background/background02.jpg</file>
+        <file>texture/Background/background03.png</file>
+        <file>texture/Effects/Blue Effects/1_0.png</file>
+        <file>texture/Effects/Blue Effects/1_1.png</file>
+        <file>texture/Effects/Blue Effects/1_10.png</file>
+        <file>texture/Effects/Blue Effects/1_11.png</file>
+        <file>texture/Effects/Blue Effects/1_12.png</file>
+        <file>texture/Effects/Blue Effects/1_13.png</file>
+        <file>texture/Effects/Blue Effects/1_14.png</file>
+        <file>texture/Effects/Blue Effects/1_15.png</file>
+        <file>texture/Effects/Blue Effects/1_16.png</file>
+        <file>texture/Effects/Blue Effects/1_2.png</file>
+        <file>texture/Effects/Blue Effects/1_3.png</file>
+        <file>texture/Effects/Blue Effects/1_4.png</file>
+        <file>texture/Effects/Blue Effects/1_5.png</file>
+        <file>texture/Effects/Blue Effects/1_6.png</file>
+        <file>texture/Effects/Blue Effects/1_7.png</file>
+        <file>texture/Effects/Blue Effects/1_8.png</file>
+        <file>texture/Effects/Blue Effects/1_9.png</file>
+        <file>texture/Effects/Galaxy/galaxy_0.png</file>
+        <file>texture/Effects/Galaxy/galaxy_1.png</file>
+        <file>texture/Effects/Galaxy/galaxy_10.png</file>
+        <file>texture/Effects/Galaxy/galaxy_11.png</file>
+        <file>texture/Effects/Galaxy/galaxy_12.png</file>
+        <file>texture/Effects/Galaxy/galaxy_13.png</file>
+        <file>texture/Effects/Galaxy/galaxy_14.png</file>
+        <file>texture/Effects/Galaxy/galaxy_15.png</file>
+        <file>texture/Effects/Galaxy/galaxy_16.png</file>
+        <file>texture/Effects/Galaxy/galaxy_2.png</file>
+        <file>texture/Effects/Galaxy/galaxy_3.png</file>
+        <file>texture/Effects/Galaxy/galaxy_4.png</file>
+        <file>texture/Effects/Galaxy/galaxy_5.png</file>
+        <file>texture/Effects/Galaxy/galaxy_6.png</file>
+        <file>texture/Effects/Galaxy/galaxy_7.png</file>
+        <file>texture/Effects/Galaxy/galaxy_8.png</file>
+        <file>texture/Effects/Galaxy/galaxy_9.png</file>
+        <file>texture/Effects/Particles/ball-lightning.png</file>
+        <file>texture/Effects/Particles/electron.png</file>
+        <file>texture/Effects/Particles/firearrow.png</file>
+        <file>texture/Effects/Particles/firebolt.png</file>
+        <file>texture/Effects/Proton Star/p_Sprite_0.png</file>
+        <file>texture/Effects/Proton Star/p_Sprite_1.png</file>
+        <file>texture/Effects/Proton Star/p_Sprite_10.png</file>
+        <file>texture/Effects/Proton Star/p_Sprite_11.png</file>
+        <file>texture/Effects/Proton Star/p_Sprite_12.png</file>
+        <file>texture/Effects/Proton Star/p_Sprite_13.png</file>
+        <file>texture/Effects/Proton Star/p_Sprite_14.png</file>
+        <file>texture/Effects/Proton Star/p_Sprite_15.png</file>
+        <file>texture/Effects/Proton Star/p_Sprite_16.png</file>
+        <file>texture/Effects/Proton Star/p_Sprite_2.png</file>
+        <file>texture/Effects/Proton Star/p_Sprite_3.png</file>
+        <file>texture/Effects/Proton Star/p_Sprite_4.png</file>
+        <file>texture/Effects/Proton Star/p_Sprite_5.png</file>
+        <file>texture/Effects/Proton Star/p_Sprite_6.png</file>
+        <file>texture/Effects/Proton Star/p_Sprite_7.png</file>
+        <file>texture/Effects/Proton Star/p_Sprite_8.png</file>
+        <file>texture/Effects/Proton Star/p_Sprite_9.png</file>
+        <file>texture/Effects/Red Explosion/1_0.png</file>
+        <file>texture/Effects/Red Explosion/1_1.png</file>
+        <file>texture/Effects/Red Explosion/1_10.png</file>
+        <file>texture/Effects/Red Explosion/1_11.png</file>
+        <file>texture/Effects/Red Explosion/1_12.png</file>
+        <file>texture/Effects/Red Explosion/1_13.png</file>
+        <file>texture/Effects/Red Explosion/1_14.png</file>
+        <file>texture/Effects/Red Explosion/1_15.png</file>
+        <file>texture/Effects/Red Explosion/1_16.png</file>
+        <file>texture/Effects/Red Explosion/1_2.png</file>
+        <file>texture/Effects/Red Explosion/1_3.png</file>
+        <file>texture/Effects/Red Explosion/1_4.png</file>
+        <file>texture/Effects/Red Explosion/1_5.png</file>
+        <file>texture/Effects/Red Explosion/1_6.png</file>
+        <file>texture/Effects/Red Explosion/1_7.png</file>
+        <file>texture/Effects/Red Explosion/1_8.png</file>
+        <file>texture/Effects/Red Explosion/1_9.png</file>
+        <file>texture/example/pwGbG.jpg</file>
+        <file>texture/example/stoshiptierchart1.png</file>
+        <file>texture/Mobs/Enemies/comm_redship/1.png</file>
+        <file>texture/Mobs/Enemies/comm_redship/2.png</file>
+        <file>texture/Mobs/Enemies/comm_redship/3.png</file>
+        <file>texture/Mobs/Enemies/Enemy_animation/1.png</file>
+        <file>texture/Mobs/Enemies/Enemy_animation/2.png</file>
+        <file>texture/Mobs/Enemies/Enemy_animation/3.png</file>
+        <file>texture/Mobs/Enemies/Enemy_animation/4.png</file>
+        <file>texture/Mobs/Enemies/Enemy_animation/5.png</file>
+        <file>texture/Mobs/Enemies/Enemy_animation/6.png</file>
+        <file>texture/Mobs/Enemies/Enemy_animation/7.png</file>
+        <file>texture/Mobs/Enemies/Enemy_animation/8.png</file>
+        <file>texture/Mobs/Enemies/Enemy_animation/Red_spaceship_enemy_red.png</file>
+        <file>texture/Mobs/Enemies/Enemy_animation/spaceship_enemy_start.png</file>
+        <file>texture/Mobs/Enemies/small_ship_animation/1.png</file>
+        <file>texture/Mobs/Enemies/small_ship_animation/2.png</file>
+        <file>texture/Mobs/Enemies/small_ship_animation/3.png</file>
+        <file>texture/Mobs/Enemies/small_ship_animation/4.png</file>
+        <file>texture/Mobs/Enemies/small_ship_animation/5.png</file>
+        <file>texture/Mobs/Enemies/Spacebombs/1.png</file>
+        <file>texture/Mobs/Enemies/Spacebombs/2.png</file>
+        <file>texture/Mobs/Enemies/Spacebombs/3.png</file>
+        <file>texture/Mobs/Enemies/Spacemines/1.png</file>
+        <file>texture/Mobs/Enemies/Spacemines/2.png</file>
+        <file>texture/Mobs/Enemies/alienship_new_red_try.png</file>
+        <file>texture/Mobs/Enemies/Communicationship2.png</file>
+        <file>texture/Mobs/Enemies/mothership_try.png</file>
+        <file>texture/Mobs/Enemies/small_ships.png</file>
+        <file>texture/Mobs/Enemies/space_bomb.png</file>
+        <file>texture/Mobs/Enemies/space_mine.png</file>
+        <file>texture/Mobs/User/Animation/1.png</file>
+        <file>texture/Mobs/User/Animation/2.png</file>
+        <file>texture/Mobs/User/Animation/3.png</file>
+        <file>texture/Mobs/User/Animation/4.png</file>
+        <file>texture/Mobs/User/Animation/5.png</file>
+        <file>texture/Mobs/User/Animation/6.png</file>
+        <file>texture/Mobs/User/Animation/7.png</file>
+        <file>texture/Mobs/User/Animation/8.png</file>
+        <file>texture/Mobs/User/Animation/alienship_new_2_try.png</file>
+        <file>texture/Mobs/User/animation_2nd_type_ship/2.png</file>
+        <file>texture/Mobs/User/animation_2nd_type_ship/3.png</file>
+        <file>texture/Mobs/User/animation_2nd_type_ship/4.png</file>
+        <file>texture/Mobs/User/animation_2nd_type_ship/Blue_spaceship_blue_animation_1.png</file>
+        <file>texture/Mobs/User/animation_2nd_type_ship/Down2.png</file>
+        <file>texture/Mobs/User/animation_2nd_type_ship/Down3.png</file>
+        <file>texture/Mobs/User/animation_2nd_type_ship/Left2.png</file>
+        <file>texture/Mobs/User/animation_2nd_type_ship/Left3.png</file>
+        <file>texture/Mobs/User/animation_2nd_type_ship/Right2.png</file>
+        <file>texture/Mobs/User/animation_2nd_type_ship/Right3.png</file>
+        <file>texture/Mobs/User/animation_2nd_type_ship/spaceship_enemy.png</file>
+        <file>texture/Mobs/User/animation_2nd_type_ship/Up2.png</file>
+        <file>texture/Mobs/User/animation_2nd_type_ship/Up3.png</file>
+        <file>texture/Mobs/User/communication_ship_animation/1.png</file>
+        <file>texture/Mobs/User/communication_ship_animation/2.png</file>
+        <file>texture/Mobs/User/communication_ship_animation/3.png</file>
+        <file>texture/Mobs/User/Small_ship_blue/1.png</file>
+        <file>texture/Mobs/User/Small_ship_blue/2.png</file>
+        <file>texture/Mobs/User/Small_ship_blue/3.png</file>
+        <file>texture/Mobs/User/Small_ship_blue/4.png</file>
+        <file>texture/Mobs/User/Small_ship_blue/5.png</file>
+        <file>texture/Mobs/User/Spacebombs/1.png</file>
+        <file>texture/Mobs/User/Spacebombs/2.png</file>
+        <file>texture/Mobs/User/Spacebombs/3.png</file>
+        <file>texture/Mobs/User/Spacemines/1.png</file>
+        <file>texture/Mobs/User/Spacemines/2.png</file>
+        <file>texture/Mobs/User/spaceship_blue_animation/2.png</file>
+        <file>texture/Mobs/User/spaceship_blue_animation/3.png</file>
+        <file>texture/Mobs/User/spaceship_blue_animation/4.png</file>
+        <file>texture/Mobs/User/Communicationship_blue.png</file>
+        <file>texture/Mobs/User/mothership_blue.png</file>
+        <file>texture/Mobs/User/space_bomb_blue.png</file>
+        <file>texture/Mobs/User/space_mine_blue.png</file>
+        <file>texture/Weapons/Blue_bullet.png</file>
+        <file>texture/Weapons/bullet_red.png</file>
+        <file>texture/Weapons/LaserBeam01.png</file>
+        <file>texture/Weapons/M484BulletCollection1.png</file>
+    </qresource>
+</RCC>
