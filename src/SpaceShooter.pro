@@ -17,13 +17,17 @@ SOURCES += main.cpp\
     Game.cpp \
     SpaceObject.cpp \
     EnemyShip.cpp \
-    UserShip.cpp
+    UserShip.cpp \
+    SpaceParticles.cpp \
+    LaserBeam.cpp
 
 HEADERS  += \
     SpaceObject.hpp \
     Game.hpp \
     EnemyShip.hpp \
-    UserShip.hpp
+    UserShip.hpp \
+    LaserBeam.hpp \
+    SpaceParticles.hpp
 
 RESOURCES += \
     ../res/qrc.qrc

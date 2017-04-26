@@ -5,7 +5,7 @@
 #include <string>
 
 UserShip::UserShip( int hp, int spd, int x, int y, const string & /* = nullptr */ )
-    : SpaceObject( hp, spd, url, x, y, url ),
+    : SpaceObject( hp, spd, x, y, url ),
       score( 0 ) {
     // empty body
 }
@@ -19,20 +19,20 @@ int UserShip::getScore() const {
     return score;
 }
 
-int UserShip::moveRight( int screenWidth ) {
-    SpaceObject::moveRight( screenWidth );
+int UserShip::moveRight( const int rightBorder ) {
+    SpaceObject::moveRight( rightBorder );
 }
 
-int UserShip::moveLeft( int screenWidth ) {
-    SpaceObject::moveLeft( screenWidth );
+int UserShip::moveLeft( const int leftBorder ) {
+    SpaceObject::moveLeft( leftBorder );
 }
 
-int UserShip::moveUp( int screenHeight ) {
-    SpaceObject::moveUp( screenHeight );
+int UserShip::moveUp( const int topBorder ) {
+    SpaceObject::moveUp( topBorder );
 }
 
-int UserShip::moveDown( int screenHeight ) {
-    SpaceObject::moveDown( screenHeight );
+int UserShip::moveDown( const int bottomBorder ) {
+    SpaceObject::moveDown( bottomBorder );
 }
 
 // frc - strike force will depend on the power of the bullet used. Define how to build this.

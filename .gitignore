@@ -3,6 +3,7 @@
 *.exe
 *.swp
 *.user
+*.autosave
 
 *.sql
 *.sqlite

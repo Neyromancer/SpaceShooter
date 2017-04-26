@@ -56,32 +56,32 @@ string &getPicPath() const {
 }
 
 // should recieve bottom border ( coord sys starts in top-left corner and y coord directs down)
-int SpaceObject::moveDown( int screenHeight ) {
-    if ( getCoordY() > screenHeight )
+int SpaceObject::moveDown( const int bottomBorder ) {
+    if ( getCoordY() > bottomBorder )
         setCoordY( getCoordY() + getSpeed() );
 
     return 0;
 }
 
 // should recieve top border ( coord sys starts in top-left corner and y coord directs down)
-int SpaceObject::moveUp( int screenHeight ) {
-    if ( getCoordY() < screenHeight )
+int SpaceObject::moveUp( const int topBorder ) {
+    if ( getCoordY() < topBorder )
         setCoordY( getCoordY() + getSpeed() );
 
     return 0;
 }
 
 // should recieve right border ( coord sys starts in top-left corner and y coord directs down)
-int SpaceObject::moveRight( int screenWidth ) {
-    if ( getCoordY() < screenWidth )
+int SpaceObject::moveRight( const int rightBorder ) {
+    if ( getCoordY() < rightBorder )
         setCoordX( getCoordX() + getSpeed() );
 
     return 0;
 }
 
 // should recieve left border
-int SpaceObject::moveLeft( int screenWidth ) {
-    if ( getCoordY() > screenWidth )
+int SpaceObject::moveLeft( const int leftBorder ) {
+    if ( getCoordY() > leftBorder )
         setCoordX( getCoordX() + getSpeed() );
 
     return 0;

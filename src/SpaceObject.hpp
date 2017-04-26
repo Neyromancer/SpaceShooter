@@ -5,6 +5,7 @@
 
 class SpaceObject {
 public:
+    // arguments: health poits, speed, coord x, coord y, url on picture
     SpaceObject( int = 100, int = 0, int = 0, int = 0, const string & = nullptr );
     virtual ~SpaceObject();
 
@@ -28,10 +29,10 @@ public:
     string &getPicPath() const;
 
     // if out of screen will emit non zero value
-    virtual int moveRight( int );
-    virtual int moveLeft( int );
-    virtual int moveUp( int );
-    virtual int moveDown( int );
+    virtual int moveRight( const int );
+    virtual int moveLeft( const int );
+    virtual int moveUp( const int );
+    virtual int moveDown( const int );
     virtual void changeHealth( int = 0 ) = 0;
 
 /* move to graphic representation class
