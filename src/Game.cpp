@@ -1,7 +1,7 @@
 #include "UserShip.hpp"
 #include "EnemyShip.hpp"
 #include "LaserBeam.hpp"
-#include "SapceParticles.hpp"
+#include "SpaceParticles.hpp"
 #include "Game.hpp"
 
 #include <QGraphicsView>

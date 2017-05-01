@@ -6,9 +6,20 @@
 #include <QGraphicsItem>
 #include <stdlib.h>
 
-EnemyShip::EnemyShip( int hp, int spd, int x, int y, const string &url /* = nullptr */ )
-    : SpaceObject( hp, spd, x, y, url ) {
+EnemyShip::EnemyShip( unsigned int hp, unsigned int spd, unsigned int x, unsigned int y, unsigned int l, unsigned int w, unsigned int b )
+    : SpaceObject( hp, spd, x, y, l, w ),
+      bulletCharge( b ) {
     // empty body
+}
+
+void EnemyShip::setScore( unsigned int scor ) {
+    if ( scor > 0 )
+        score = scor;
+    else score = 0;
+}
+
+unsigned int EnemyShip::getScore() const {
+    return score;
 }
 
 // should recieve bottom border ( coord sys starts in top-left corner and y coord directs down)
@@ -48,7 +59,7 @@ int EnemyShip::moveLeft( const int leftBorder ) {
 }
 
 // frc - strike force will depend on the power of the bullet used. Define how to build this.
-void EnemyShip::changeHealth( int frc ) {
+void EnemyShip::changeHealth( unsigned int frc ) {
     // can change later
     SpaceObject::setHealth( SpaceObject::getHealth() - frc );
 }

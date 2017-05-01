@@ -19,7 +19,8 @@ SOURCES += main.cpp\
     EnemyShip.cpp \
     UserShip.cpp \
     SpaceParticles.cpp \
-    LaserBeam.cpp
+    LaserBeam.cpp \
+    Screen.cpp
 
 HEADERS  += \
     SpaceObject.hpp \
@@ -27,7 +28,8 @@ HEADERS  += \
     EnemyShip.hpp \
     UserShip.hpp \
     LaserBeam.hpp \
-    SpaceParticles.hpp
+    SpaceParticles.hpp \
+    Screen.hpp
 
 RESOURCES += \
     ../res/qrc.qrc

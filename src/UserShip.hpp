@@ -3,28 +3,28 @@
 
 #include "SpaceObject.hpp"
 
-#include <string>
-
 class UserShip : public SpaceObject {
 
 public:
-    UserShip( int = 100, int = 10, int = 0, int = 0, const string & = nullptr );
+    UserShip( unsigned int = 100, unsigned int = 10, unsigned int = 0, unsigned int = 0, unsigned int = 1, unsigned int = 1, unsigned int = 1000 );
     ~UserShip();
 
-    void setScore( int );
-    int getScore() const;
+    void setScore( unsigned int );
+    unsigned int getScore() const;
 
-/* move to graphic representation clas
-    void keyPressEvent(QKeyEvent *event );
-*/
-    virtual int moveRight( int ) override;
-    virtual int moveLeft( int ) override;
-    virtual int moveUp( int ) override;
-    virtual int moveDown( int ) override;
-    virtual void changeHealth( int = 0 ) override;
+    void setBulletCharge( unsigned int );
+    unsigned int getBulletCharge() const;
+
+    virtual int moveRight( const int ) override;
+    virtual int moveLeft( const int ) override;
+    virtual int moveUp( const int ) override;
+    virtual int moveDown( const int ) override;
+    virtual void changeHealth( unsigned int = 0 ) override;
 
 private:
-    int score;
+    unsigned int score;
+    unsigned int bulletCharge;
+
 
 };
 

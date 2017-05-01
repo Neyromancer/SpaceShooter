@@ -1,7 +1,7 @@
 #include "SpaceObject.hpp"
 #include <string>
 
-SpaceObject::SpaceObject( int hp, int spd, int x, int y, const string &url /* = nullptr */ )
+SpaceObject::SpaceObject( unsigned int hp, unsigned int spd, unsigned int x, unsigned int y, unsigned int l, unsigned int w/*, const string &url = nullptr */ )
     : health( hp ),
       speed( spd ),
       coordX( x ),
@@ -9,7 +9,7 @@ SpaceObject::SpaceObject( int hp, int spd, int x, int y, const string &url /* = 
     // empty body
 }
 
-void SpaceObject::setHealth( const int hp ) {
+void SpaceObject::setHealth( const unsigned int hp ) {
     if ( hp > 0 )
         health = hp;
     else
@@ -20,7 +20,7 @@ int SpaceObject::getHealth() const {
     return health;
 }
 
-void SpaceObject::setSpeed( const int spd ) {
+void SpaceObject::setSpeed( const unsigned int spd ) {
     if ( spd > 0 )
         speed = spd;
     else
@@ -31,7 +31,7 @@ int SpaceObject::getSpeed() const {
     return speed;
 }
 
-void SpaceObject::setCoordX( int x ) {
+void SpaceObject::setCoordX( unsigned int x ) {
     coordX = x;
 }
 
@@ -39,13 +39,29 @@ int SpaceObject::getCoordX() const {
     return coordX;
 }
 
-void SpaceObject::setCoordY( int y ) {
+void SpaceObject::setCoordY( unsigned int y ) {
     coordY = y;
 }
 
 int SpaceObject::getCoordY() const {
     return coordY;
 }
+
+void SpaceObject::setWidth( unsigned int w ) {
+    if ( w >= 1 )
+        width = w;
+    else width = 1;
+}
+unsigned int SpaceObject::getWidth() const {
+    return width;
+}
+
+void SpaceObject::setHeight( unsigned int l ) {
+    if ( l >= 1 )
+        length = l;
+    else length = 1;
+}
+unsigned int SpaceObject::getHeight() const;
 
 void setPicPath( const string &url ) {
     picPath = url;
