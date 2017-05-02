@@ -15,15 +15,12 @@ void SpaceObject::setHealth( const unsigned int hp ) {
         health = 0;
 }
 
-int SpaceObject::getHealth() const {
+unsigned int SpaceObject::getHealth() const {
     return health;
 }
 
-void SpaceObject::setSpeed( const unsigned int spd ) {
-    if ( spd > 0 )
+void SpaceObject::setSpeed( int spd ) {
         speed = spd;
-    else
-        speed = 0;
 }
 
 int SpaceObject::getSpeed() const {
@@ -34,7 +31,7 @@ void SpaceObject::setCoordX( unsigned int x ) {
     coordX = x;
 }
 
-int SpaceObject::getCoordX() const {
+unsigned int SpaceObject::getCoordX() const {
     return coordX;
 }
 
@@ -42,7 +39,7 @@ void SpaceObject::setCoordY( unsigned int y ) {
     coordY = y;
 }
 
-int SpaceObject::getCoordY() const {
+unsigned int SpaceObject::getCoordY() const {
     return coordY;
 }
 

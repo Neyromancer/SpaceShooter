@@ -7,13 +7,15 @@
 #include <QGraphicsView>
 #include <QObject>
 #include <QWidget>
+#include <QGraphicsItem>
 #include <QGraphicsScene>
 
 class Screen : public QGraphicsView {
     Q_OBJECT
 
 public:
-    Screen( QWidget *parent = 0 );
+    Screen( QGraphicsItem *item = 0, QWidget *parent = 0 );
+    void loadItem( QGraphicsItem * );
 
 public slots:
     void createBackGroundParticles();
@@ -22,6 +24,7 @@ private:
     QGraphicsScene *scene;
     UIUserShip *user;
     UISpaceParticle *particle;
+    QGraphicsItem *obj;
     const unsigned int PIXELS_PER_METER = 2;
 };
 

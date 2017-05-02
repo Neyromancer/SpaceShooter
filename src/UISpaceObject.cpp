@@ -14,6 +14,14 @@ void UISpaceObject::setObject( const QPixmap &obj ) {
         object = obj;
 }
 
+QString UISpaceObject::getUrl() const {
+    return url;
+}
+
+void UISpaceObject::setUrl( const QString &link ) {
+    url = link;
+}
+
 void UISpaceObject::changePicture() {
     int randomNumber = 1 + ( rand() % 8 );
     QString pic = ":/texture/" + QString::number( randomNumber ) + ".png";

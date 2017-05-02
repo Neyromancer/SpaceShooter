@@ -4,8 +4,10 @@
 #include <QBrush>
 #include <QImage>
 #include <QGraphicsScene>
+#include <QGraphicsItem>
 
-Screen::Screen( QWidget *parent ) {
+Screen::Screen( QGraphicsItem *item, QWidget *parent )
+    : obj( item ){
     scene = new QGraphicsScene();
     scene->setSceneRect( 0, 0, 480, 640 );
     setBackgroundBrush( QBrush ( QImage(":/texture/Background/background03.png") ) );
@@ -17,17 +19,26 @@ Screen::Screen( QWidget *parent ) {
     setFixedSize( 480, 640 );
 
     // set player
-    user = new UIUserShip( ":/texture/Mobs/User/Animation/1.png" );
-    user->setPos( width() / 2, height() - user->getObject().rect().height() - 10 );
-    user->setFlag( QGraphicsItem::ItemIsFocusable );
-    user->setFocus();
-    scene->addItem( user );
+//    user = new UIUserShip( ":/texture/Mobs/User/Animation/1.png" );
+//    user->setPos( width() / 2, height() - user->getObject().rect().height() - 10 );
+//    user->setFlag( QGraphicsItem::ItemIsFocusable );
+//    user->setFocus();
+//    scene->addItem( user );
 
     // set particles
-    particle = new UISpaceParticle( ":/texture/Effects/Particles/ball-lightning.png" );
-    particle->setPos( 100, 10 );
-    scene->addItem( particle );
+//    particle = new UISpaceParticle( ":/texture/Effects/Particles/ball-lightning.png" );
+//    particle->setPos( 100, 10 );
+    scene->addItem( item );
 
+    show();
+}
+
+void Screen::loadItem( QGraphicsItem *item ) {
+    obj = item;
+
+    scene->addItem( obj );
+
+    show();
 }
 
 void Screen::createBackGroundParticles() {

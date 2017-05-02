@@ -14,11 +14,15 @@ public:
     QPixmap getObject() const;
     void setObject( const QPixmap & );
 
+    QString getUrl() const;
+    void setUrl( const QString & );
+
 public slots:
     virtual void changePicture();
 
 private:
      QPixmap object;
+     QString url;
 };
 
 #endif // UISPACEOBJECT_HPP

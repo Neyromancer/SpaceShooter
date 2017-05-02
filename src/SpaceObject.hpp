@@ -10,20 +10,20 @@ public:
     virtual ~SpaceObject();
 
     void setHealth( unsigned int );
-    int getHealth() const;
+    unsigned int getHealth() const;
 
-    void setSpeed( unsigned int );
+    void setSpeed( int );
     int getSpeed() const;
 
     void setCoord( unsigned int, unsigned int );
 
     // setCoordY func may except argument that conatin object's width ( such as x + width() )
     void setCoordX( unsigned int );
-    int getCoordX() const;
+    unsigned int getCoordX() const;
 
     // setCoordY func may except argument that conatin object's height ( such as y + height() )
     void setCoordY( unsigned int );
-    int getCoordY() const;
+    unsigned int getCoordY() const;
 
     void setWidth( unsigned int );
     unsigned int getWidth() const;
@@ -45,7 +45,7 @@ public slots:
 
 private:
         unsigned int health;
-        unsigned int speed;
+        int speed;
         unsigned int coordX;
         unsigned int coordY;
         unsigned int length;
