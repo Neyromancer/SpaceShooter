@@ -1,30 +1,16 @@
 #ifndef GAME_HPP
 #define GAME_HPP
 
-#include "UserShip.hpp"
-#include "EnemyShip.hpp"
-#include "LaserBeam.hpp"
-#include "SpaceParticles.hpp"
+#include <QObject>
+#include <QGraphicsPixmapItem>
 
-#include <QGraphicsView>
-#include <QGraphicsScene>
-#include <QWidget>
-
-// controller
-class Game : public QObject, public QGraphicsView {
+class Game : public QObject, public QGraphicsPixmapItem {
     Q_OBJECT
-  public:
-    Game( QWidget *parent = 0 );
-    ~Game();
+public:
+    Game( QGraphicsItem *parent = 0 );
 
-private:
-    QGraphicsScene *scene;
-    UserShip *player;
-    EnemyShip *streamRunner;
-    LaserBeam *laserBeam;
-    SpaceParticles *spaceParticles;
-
-    QList<SpaceObject *> object;
+    void keyPressEvent( QKeyEvent *event );
+    void keyReleaseEvent( QKeyEvent *event );
 };
 
 #endif // GAME_HPP

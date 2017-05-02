@@ -9,11 +9,7 @@ public:
     EnemyShip( unsigned int = 100, unsigned int = 5, unsigned int = 0, unsigned int = 0, unsigned int = 1, unsigned int = 1, unsigned int = 1000 );
     ~EnemyShip();
 
-    virtual int moveRight( int ) override;
-    virtual int moveLeft( int ) override;
-    virtual int moveUp( int ) override;
-    virtual int moveDown( int ) override;
-    virtual void changeHealth( int = 0 ) override;
+    virtual void changeHealth( unsigned int = 0 ) override;
 
 private:
     void setBulletCharge( unsigned int );

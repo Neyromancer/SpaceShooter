@@ -15,17 +15,11 @@ public:
     void setBulletCharge( unsigned int );
     unsigned int getBulletCharge() const;
 
-    virtual int moveRight( const int ) override;
-    virtual int moveLeft( const int ) override;
-    virtual int moveUp( const int ) override;
-    virtual int moveDown( const int ) override;
     virtual void changeHealth( unsigned int = 0 ) override;
 
 private:
     unsigned int score;
     unsigned int bulletCharge;
-
-
 };
 
 #endif // USERSHIP_HPP

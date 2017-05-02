@@ -13,6 +13,7 @@ UserShip::UserShip( unsigned int hp, unsigned int spd, unsigned int x, unsigned 
 void UserShip::setScore( unsigned int scor ) {
     if ( scor > 0 )
         score = scor;
+    else score = 0;
 }
 
 unsigned int UserShip::getScore() const {
@@ -20,7 +21,7 @@ unsigned int UserShip::getScore() const {
 }
 
 void UserShip::setBulletCharge( unsigned int bullet ) {
-    if ( bullet >= 0 )
+    if ( bullet > 0 )
         bulletCharge = bullet;
     else bulletCharge = 0;
 }
@@ -28,23 +29,11 @@ unsigned int UserShip::getBulletCharge() const {
     return bulletCharge;
 }
 
-int UserShip::moveRight( const int rightBorder ) {
-    SpaceObject::moveRight( rightBorder );
-}
-
-int UserShip::moveLeft( const int leftBorder ) {
-    SpaceObject::moveLeft( leftBorder );
-}
-
-int UserShip::moveUp( const int topBorder ) {
-    SpaceObject::moveUp( topBorder );
-}
-
-int UserShip::moveDown( const int bottomBorder ) {
-    SpaceObject::moveDown( bottomBorder );
-}
-
 // frc - strike force will depend on the power of the bullet used. Define how to build this.
 void UserShip::changeHealth( unsigned int frc ) {
     SpaceObject::setHealth( SpaceObject::getHealth() - frc );
 }
+
+ UserShip::~UserShip() {
+
+ }

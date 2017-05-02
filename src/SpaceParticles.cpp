@@ -1,17 +1,13 @@
 #include "SpaceParticles.hpp"
 #include "SpaceObject.hpp"
 
-SpaceParticles::SpaceParticles( int hp, int spd, int x, int y, int l, int w/*, const string &url = nullptr */ )
+SpaceParticles::SpaceParticles( unsigned int hp, unsigned int spd, unsigned int x, unsigned int y, unsigned int l, unsigned int w )
     : SpaceObject( hp, spd, x, y, l, w ) {
     // empty body
 }
 
-int SpaceParticles::moveDown( const int bottomBorder ) {
-    SpaceObject::moveDown( bottomBorder );
-}
-
-void SpaceParticles::changeHealth( unsigned int frc = 0 ) {
-    SpaceObject::setHealth( SpaceObject::getHealth() - frc );
+void SpaceParticles::changeHealth( unsigned int frc ) {
+    SpaceObject::setHealth( frc );
 }
 
 SpaceParticles::~SpaceParticles() {

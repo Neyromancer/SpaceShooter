@@ -5,8 +5,8 @@
 
 class SpaceObject {
 public:
-    // arguments: health poits, speed, coord x, coord y, lenght l, width w, url on picture
-    SpaceObject( unsigned int = 100, unsigned int = 0, unsigned int = 0, unsigned int = 0, unsigned int = 1, unsigned int = 1 /*, const string & = nullptr */);
+    // arguments: health poits, speed, coord x, coord y, lenght l, width w
+    SpaceObject( unsigned int = 100, unsigned int = 0, unsigned int = 0, unsigned int = 0, unsigned int = 1, unsigned int = 1 );
     virtual ~SpaceObject();
 
     void setHealth( unsigned int );
@@ -28,20 +28,14 @@ public:
     void setWidth( unsigned int );
     unsigned int getWidth() const;
 
-    void setHeight( unsigned int );
-    unsigned int getHeight() const;
+    void setLength( unsigned int );
+    unsigned int getLength() const;
 
-    // this function should be based on moving behaviour ( i.e. left, right, up or down )
-    // load pics from the source folder
-    // recieved integer will stay for the direction implemented
-    void setPicPath( int );
-    string &getPicPath() const;
+    void moveRight();
+    void moveLeft();
+    void moveUp();
+    void moveDown();
 
-    // if out of screen will emit non zero value
-    virtual int moveRight( const unsigned int );
-    virtual int moveLeft( const unsigned int );
-    virtual int moveUp( const unsigned int );
-    virtual int moveDown( const unsigned int );
     virtual void changeHealth( unsigned int = 0 ) = 0;
 
 /* move to graphic representation class
@@ -56,7 +50,6 @@ private:
         unsigned int coordY;
         unsigned int length;
         unsigned int width;
-        string picPath;
 };
 
 

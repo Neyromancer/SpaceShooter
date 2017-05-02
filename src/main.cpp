@@ -1,13 +1,11 @@
-#include "Game.hpp"
+#include "Screen.hpp"
 
 #include <QApplication>
 
 int main(int argc, char *argv[]) {
     QApplication a(argc, argv);
-
-    Game game = new Game();
-
-    game->show();
+    Screen *screen = new Screen();
+    screen->show();
 
     return a.exec();
 }

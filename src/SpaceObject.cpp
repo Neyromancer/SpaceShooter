@@ -1,7 +1,6 @@
 #include "SpaceObject.hpp"
-#include <string>
 
-SpaceObject::SpaceObject( unsigned int hp, unsigned int spd, unsigned int x, unsigned int y, unsigned int l, unsigned int w/*, const string &url = nullptr */ )
+SpaceObject::SpaceObject( unsigned int hp, unsigned int spd, unsigned int x, unsigned int y, unsigned int l, unsigned int w )
     : health( hp ),
       speed( spd ),
       coordX( x ),
@@ -56,51 +55,34 @@ unsigned int SpaceObject::getWidth() const {
     return width;
 }
 
-void SpaceObject::setHeight( unsigned int l ) {
+void SpaceObject::setLength( unsigned int l ) {
     if ( l >= 1 )
         length = l;
     else length = 1;
 }
-unsigned int SpaceObject::getHeight() const;
-
-void setPicPath( const string &url ) {
-    picPath = url;
+unsigned int SpaceObject::getLength() const {
+    return length;
 }
 
-string &getPicPath() const {
-    return picPath;
+
+// ( coord sys starts in top-left corner and y coord directs down)
+void SpaceObject::moveDown() {
+    setCoordY( getCoordY() + getSpeed() );
 }
 
-// should recieve bottom border ( coord sys starts in top-left corner and y coord directs down)
-int SpaceObject::moveDown( const int bottomBorder ) {
-    if ( getCoordY() > bottomBorder )
-        setCoordY( getCoordY() + getSpeed() );
-
-    return 0;
+// ( coord sys starts in top-left corner and y coord directs down)
+void SpaceObject::moveUp() {
+    setCoordY( getCoordY() + getSpeed() );
 }
 
-// should recieve top border ( coord sys starts in top-left corner and y coord directs down)
-int SpaceObject::moveUp( const int topBorder ) {
-    if ( getCoordY() < topBorder )
-        setCoordY( getCoordY() + getSpeed() );
-
-    return 0;
+// ( coord sys starts in top-left corner and y coord directs down)
+void SpaceObject::moveRight() {
+    setCoordX( getCoordX() + getSpeed() );
 }
 
-// should recieve right border ( coord sys starts in top-left corner and y coord directs down)
-int SpaceObject::moveRight( const int rightBorder ) {
-    if ( getCoordY() < rightBorder )
-        setCoordX( getCoordX() + getSpeed() );
-
-    return 0;
-}
-
-// should recieve left border
-int SpaceObject::moveLeft( const int leftBorder ) {
-    if ( getCoordY() > leftBorder )
-        setCoordX( getCoordX() + getSpeed() );
-
-    return 0;
+// ( coord sys starts in top-left corner and y coord directs down)
+void SpaceObject::moveLeft() {
+    setCoordX( getCoordX() + getSpeed() );
 }
 
 /* move to graphic representation class

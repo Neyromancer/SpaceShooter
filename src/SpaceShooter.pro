@@ -13,14 +13,16 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        main.cpp \
     Game.cpp \
     SpaceObject.cpp \
     EnemyShip.cpp \
     UserShip.cpp \
     SpaceParticles.cpp \
     LaserBeam.cpp \
-    Screen.cpp
+    Screen.cpp \
+    UISpaceObject.cpp \
+    UIUserShip.cpp \
+    UISpaceParticle.cpp
 
 HEADERS  += \
     SpaceObject.hpp \
@@ -29,7 +31,10 @@ HEADERS  += \
     UserShip.hpp \
     LaserBeam.hpp \
     SpaceParticles.hpp \
-    Screen.hpp
+    Screen.hpp \
+    UISpaceObject.hpp \
+    UIUserShip.hpp \
+    UISpaceParticle.hpp
 
 RESOURCES += \
     ../res/qrc.qrc
