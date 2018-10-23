@@ -7,9 +7,13 @@
 
 *.sql
 *.sqlite
+*.pri
+*.pro
+*.pro.user
 
 # ignore all files in backup directory
 backup/
-src/build-SpaceShooter-Desktop_Qt_5_7_0_GCC_64bit-Debug/
+src/client/build-space_shooter*/*
+src/client/view/build-space_shooter*/*
 
 sour*
