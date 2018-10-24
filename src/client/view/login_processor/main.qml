@@ -13,9 +13,9 @@ Window {
         id: main_form
         color: "steelblue";
         anchors.fill: parent
-        mouseArea.onClicked: {
+        //mouseArea.onClicked: {
             //Qt.quit();
-        }
+        //}
 
         signal qmlSignal(string msg)
 
@@ -43,6 +43,5 @@ Window {
             maximumLength: 128
         }
     }
-
 }
 
