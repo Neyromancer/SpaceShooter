@@ -65,6 +65,7 @@ static bool IsPasswordValid(const QString &password) {
 static bool IsContainVlidSymbols(const QString &password) {
     QString valid_symbols = "@!#$%";
     for (const auto &el : password) {
+        // change contains to regexpr?
         if (!std::isalnum(el.toLatin1()) && !valid_symbols.contains(el,
                                                          Qt::CaseInsensitive))
             return false;
