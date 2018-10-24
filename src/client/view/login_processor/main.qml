@@ -24,8 +24,6 @@ Window {
             x: parent.x + 10
             y: parent.y  + 35
             width: 200
-            //anchors.fill: parent
-            onAccepted: backend.setUserName(name.displayText)
 
             selectByMouse: false
             placeholderText: qsTr("Enter name")
@@ -43,7 +41,6 @@ Window {
             echoMode: TextInput.Password
             placeholderText: qsTr("Enter password")
             maximumLength: 128
-            //displayText: "*"
         }
     }
 

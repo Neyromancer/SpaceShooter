@@ -1,7 +1,6 @@
 <RCC>
     <qresource prefix="/">
-        <file>main.qml</file>
-        <file>MainForm.ui.qml</file>
+        <file>view/login_processor/main.qml</file>
+        <file>view/login_processor/MainForm.ui.qml</file>
     </qresource>
 </RCC>
-
