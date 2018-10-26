@@ -8,23 +8,17 @@
 #include <QQuickItem>
 #include <QQmlContext>
 
-#include "login_processor.h"
+#include "./model/login_processor/login_processor.h"
 
 int main(int argc, char *argv[])
 {
     QGuiApplication app(argc, argv);
 
-    MyClass my_class;
+    space_shooter::client::LoginProcessor login_processor;
     QQmlApplicationEngine engine;
-    engine.rootContext()->setContextProperty("backend", &my_class);
+    engine.rootContext()->setContextProperty("backend", &login_processor);
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
-
-//    QObject *item = qobject_cast<QObject *>(engine.rootObjects()[0]);
-//    const QMetaObject *metaObject = item->metaObject();
-//    for (auto i = 0; i < metaObject->methodCount(); ++i) {
-//        QMetaMethod method = metaObject->method(i);
-//        qDebug() << method.methodSignature();
-//    }
+    engine.addPluginPath(QString("./view/login_processor/"));
 
     return app.exec();
 }

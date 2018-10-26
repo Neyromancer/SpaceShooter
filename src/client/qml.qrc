@@ -2,5 +2,6 @@
     <qresource prefix="/">
         <file>view/login_processor/main.qml</file>
         <file>view/login_processor/MainForm.ui.qml</file>
+        <file>../../res/Texture/GuiTextures/button.qml</file>
     </qresource>
 </RCC>
