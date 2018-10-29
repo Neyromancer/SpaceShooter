@@ -3,16 +3,21 @@ import QtQuick 2.0
 Rectangle {
     id: button
 
-    width: 75
-    height: 25
     color: "lightsteelblue"
     border.color: "black"
+    width: bwidth
+    height: bheight
     border.width: 1
     radius: 5
 
+    property string title: "log in"
+    property int bwidth: 75
+    property int bheight: 25
+//    enabled: false
+
     Text {
         id: button_sign
-        text: "log in"
+        text: title
         font.family: "Helvetica"
         font.pointSize: 12
         color: "black"
@@ -24,6 +29,7 @@ Rectangle {
         anchors.fill: parent
         onPressed: {
             parent.color = "blue"
+//            enabled: true
         }
 
         onReleased: {

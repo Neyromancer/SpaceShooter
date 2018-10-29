@@ -2,7 +2,7 @@ import QtQuick 2.5
 import QtQuick.Window 2.2
 import QtQuick.Controls 1.4
 
-import "./" as Button
+import "qrc:/" as Button
 
 Window {
     visible: true
@@ -46,14 +46,16 @@ Window {
         }
 
         Button.Button {
-            id: log_in
+            id: sign_in
+            title: "sign in"
             x: main_form.x + 10
             y: password.x + password.height + 100
         }
 
         Button.Button {
             id: sign_up
-            x: log_in.x + log_in.width + 100
+            title: "sing up"
+            x: sign_in.x + sign_in.width + 100
             y: password.x + password.height + 100
         }
     }
