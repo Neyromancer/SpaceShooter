@@ -47,17 +47,26 @@ Window {
 
         Button.Button {
             id: sign_in
-            title: "sign in"
+            button_title: "sign in"
             x: main_form.x + 10
             y: password.x + password.height + 100
+
+            onButtonClicked: {
+                backend.setUserNameAndPassowrd(name.text, password.text)
+                console.log(name.text)
+                console.log(password.text)
+            }
         }
 
         Button.Button {
             id: sign_up
-            title: "sing up"
+            button_title: "sing up"
             x: sign_in.x + sign_in.width + 100
             y: password.x + password.height + 100
         }
+
+
+
     }
 }
 

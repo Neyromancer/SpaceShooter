@@ -20,6 +20,9 @@ int main(int argc, char *argv[])
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
     engine.addPluginPath(QString("./view/login_processor/"));
 
+//    qDebug() << login_processor.getUserName();
+//    qDebug() << login_processor.getPassword();
+
     return app.exec();
 }
 

@@ -1,7 +1,7 @@
 import QtQuick 2.0
 
 Rectangle {
-    id: button
+    id: root
 
     color: "lightsteelblue"
     border.color: "black"
@@ -10,14 +10,16 @@ Rectangle {
     border.width: 1
     radius: 5
 
-    property string title: "log in"
+    property alias button_title: title.text
+//    property alias is_pressed: mouse_area.onPressed()
     property int bwidth: 75
     property int bheight: 25
-//    enabled: false
+
+    signal buttonClicked()
 
     Text {
-        id: button_sign
-        text: title
+        id: title
+
         font.family: "Helvetica"
         font.pointSize: 12
         color: "black"
@@ -26,10 +28,11 @@ Rectangle {
     }
 
     MouseArea {
+        id: mouse_area
         anchors.fill: parent
         onPressed: {
             parent.color = "blue"
-//            enabled: true
+            root.buttonClicked()
         }
 
         onReleased: {
