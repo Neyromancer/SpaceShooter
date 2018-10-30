@@ -26,17 +26,21 @@ void LoginProcessor::setUserNameAndPassowrd(const QString &name,
     if (IsNameValid(name)) {
         user_name_ = name;
         is_valid_name = true;
+        qDebug() << user_name_;
     } else {
-        // signal to QML should be sent here
+        // signal to QML should be sent from here
         std::cout << "wrong user name" << std::endl;
+        emit invalidUserName();
     }
 
     if (IsPasswordValid(password)) {
         password_ = password;
         is_valid_passowrd = true;
+        qDebug() << user_name_;
     } else {
-        // signal to QML should be sent here
+        // signal to QML should be sent from here
         std::cout << "wrong password" << std::endl;
+        emit invalidPassword();
     }
 
     if (is_valid_name && is_valid_passowrd)

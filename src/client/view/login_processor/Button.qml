@@ -11,7 +11,6 @@ Rectangle {
     radius: 5
 
     property alias button_title: title.text
-//    property alias is_pressed: mouse_area.onPressed()
     property int bwidth: 75
     property int bheight: 25
 

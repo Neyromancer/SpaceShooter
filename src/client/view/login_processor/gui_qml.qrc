@@ -1,7 +1,7 @@
 <RCC>
     <qresource prefix="/">
         <file>Button.qml</file>
-        <file>main.qml</file>
+        <file>LogInInterface.qml</file>
         <file>MainForm.ui.qml</file>
     </qresource>
 </RCC>

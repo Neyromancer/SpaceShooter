@@ -18,6 +18,8 @@ namespace client {
 
 class LoginProcessor : public QObject {
     Q_OBJECT
+    Q_PROPERTY(QString userName MEMBER user_name_ NOTIFY invalidUserName)
+    Q_PROPERTY(QString password MEMBER password_ NOTIFY invalidPassword)
  public:
     /// \brief LoginPorcessor constructor.
     explicit LoginProcessor();
@@ -44,20 +46,32 @@ class LoginProcessor : public QObject {
     /// \brief Set user name and password.
     /// \param[in] name User name.
     /// \param[in] password Passowrd.
-    Q_INVOKABLE void setUserNameAndPassowrd(const QString &name, const QString &password);
-
+    Q_INVOKABLE void setUserNameAndPassowrd(const QString &name,
+                                            const QString &password);
 
     /// \brief Return user name.
     /// \return User name.
-    QString getUserName() const noexcept {
+    inline QString getUserName() const noexcept {
         return user_name_;
     }
 
     /// \brief Return password.
     /// \return Passowrd.
-    QString getPassword() const noexcept {
+    inline QString getPassword() const noexcept {
         return password_;
     }
+
+    /// \brief Return result of login.
+    /// \return Result of login.
+    inline bool isLogined() const noexcept {
+        return is_login_successful_;
+    }
+
+ signals:
+    /// \brief Signal emitted on invalid user name.
+    void invalidUserName();
+    /// \brief Signal emitted on invalid password.
+    void invalidPassword();
 
  private:
     QString user_name_;
