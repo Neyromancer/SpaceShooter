@@ -101,7 +101,6 @@ Window {
 
             onButtonClicked: {
                 backend.setUserNameAndPassowrd(name.text, password.text)
-//                Qt.quit();
             }
         }
 
@@ -110,6 +109,11 @@ Window {
             button_title: "sing up"
             x: sign_in.x + sign_in.width + 100
             y: password.x + password.height + 100
+
+            onButtonClicked: {
+             // send signal to start Sign up gui
+            //                Qt.quit();
+            }
         }
 
         Connections {
