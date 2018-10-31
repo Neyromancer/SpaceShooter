@@ -5,17 +5,11 @@
 
 #include "login_processor.h"
 
-#include <cctype>
-
 namespace space_shooter {
 namespace client {
 
-static bool IsNameValid(const QString &name);
-static bool IsPasswordValid(const QString &password);
-static bool IsContainVlidSymbols(const QString &password);
-
 LoginProcessor::LoginProcessor()
-    : user_name_{}, password_{}, is_login_successful_{false} {}
+    : user_name_{}, password_{}, is_login_correct_{false} {}
 
 void LoginProcessor::setUserNameAndPassowrd(const QString &name,
                                             const QString &password) {
@@ -23,7 +17,7 @@ void LoginProcessor::setUserNameAndPassowrd(const QString &name,
     auto is_valid_name = false;
     auto is_valid_passowrd = false;
 
-    if (IsNameValid(name)) {
+    if (isNameValid(name)) {
         user_name_ = name;
         is_valid_name = true;
         qDebug() << user_name_;
@@ -33,7 +27,7 @@ void LoginProcessor::setUserNameAndPassowrd(const QString &name,
         emit invalidUserName();
     }
 
-    if (IsPasswordValid(password)) {
+    if (isPasswordValid(password)) {
         password_ = password;
         is_valid_passowrd = true;
         qDebug() << user_name_;
@@ -44,37 +38,7 @@ void LoginProcessor::setUserNameAndPassowrd(const QString &name,
     }
 
     if (is_valid_name && is_valid_passowrd)
-        is_login_successful_ = true;
-}
-
-static bool IsNameValid(const QString &name) {
-    if (name.isEmpty())
-        return false;
-
-    if (name.size() <= 4 || name.size() >= 250)
-        return false;
-    return true;
-}
-
-static bool IsPasswordValid(const QString &password) {
-    if (password.isEmpty())
-        return false;
-
-    if (!IsContainVlidSymbols(password))
-        return false;
-
-    return true;
-}
-
-static bool IsContainVlidSymbols(const QString &password) {
-    QString valid_symbols = "@!#$%";
-    for (const auto &el : password) {
-        // change contains to regexpr?
-        if (!std::isalnum(el.toLatin1()) && !valid_symbols.contains(el,
-                                                         Qt::CaseInsensitive))
-            return false;
-    }
-    return true;
+        is_login_correct_ = true;
 }
 
 }   // namespace client

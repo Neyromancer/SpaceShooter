@@ -3,15 +3,14 @@
 /// \author
 /// \date 23.10.2018
 
-#ifndef SPACE_SHOOTER_MODEL_LOGIN_PROCESSOR_H_
-#define SPACE_SHOOTER_MODEL_LOGIN_PROCESSOR_H_
+#ifndef SPACE_SHOOTER_CLIENT_MODEL_LOGIN_PROCESSOR_LOGIN_PROCESSOR_H_
+#define SPACE_SHOOTER_CLIENT_MODEL_LOGIN_PROCESSOR_LOGIN_PROCESSOR_H_
 
 #include <QObject>
-#include <QDebug>
 #include <QString>
 
-#include <string>
-#include <iostream>
+#include <string>   // remove after debugging
+#include <iostream> // remove after debugging
 
 namespace space_shooter {
 namespace client {
@@ -28,19 +27,21 @@ class LoginProcessor : public QObject {
     ~LoginProcessor() = default;
 
     /// \brief LoginPorcessor copy constructor.
-    /// \param[LoginProcessor] Class LoginProcessor object.
+    /// \param[in] login Class LoginProcessor object.
     LoginProcessor(const LoginProcessor &login) = delete;
 
     /// \brief LoginPorcessor move constructor.
-    /// \param[LoginProcessor] Class LoginProcessor object.
+    /// \param[in] login Class LoginProcessor object.
     LoginProcessor(LoginProcessor &&login) = default;
 
     /// \brief LoginPorcessor copy assignment.
-    /// \param[LoginProcessor] Class LoginProcessor object.
+    /// \param[in] login Class LoginProcessor object.
+    /// \return login. LoginProcessor object.
     LoginProcessor &operator=(const LoginProcessor &login) = delete;
 
     /// \brief LoginPorcessor move assignment.
-    /// \param[LoginProcessor] Class LoginProcessor object.
+    /// \param[in] login Class LoginProcessor object.
+    /// \return login. LoginProcessor object.
     LoginProcessor &operator=(LoginProcessor &&login) = default;
 
     /// \brief Set user name and password.
@@ -63,24 +64,25 @@ class LoginProcessor : public QObject {
 
     /// \brief Return result of login.
     /// \return Result of login.
-    inline bool isLogined() const noexcept {
-        return is_login_successful_;
+    inline bool isLoginCorrect() const noexcept {
+        return is_login_correct_;
     }
 
  signals:
-    /// \brief Signal emitted on invalid user name.
+    /// \brief Emit signal on invalid user name.
     void invalidUserName();
-    /// \brief Signal emitted on invalid password.
+
+    /// \brief Emit signal on invalid password.
     void invalidPassword();
 
  private:
     QString user_name_;
     QString password_;
-    bool is_login_successful_;
+    bool is_login_correct_;
 };
 
-} // client
+} // namespace client
 } // namespace space_shooter
 
-#endif // SPACE_SHOOTER_MODEL_LOGIN_PROCESSOR_H_
+#endif // SPACE_SHOOTER_CLIENT_MODEL_LOGIN_PROCESSOR_LOGIN_PROCESSOR_H_
 
