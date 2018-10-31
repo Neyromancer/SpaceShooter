@@ -5,6 +5,8 @@
 
 #include "login_processor.h"
 
+#include "utils.h"
+
 namespace space_shooter {
 namespace client {
 
