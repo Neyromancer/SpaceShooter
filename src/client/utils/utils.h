@@ -11,10 +11,10 @@
 namespace space_shooter {
 namespace client {
 
-static bool isNameValid(const QString &name);
-static bool isEmailValid(const QString &email);
-static bool isPasswordValid(const QString &password);
-static bool isContainVlidSymbols(const QString &password);
+bool isNameValid(const QString &name);
+bool isEmailValid(const QString &email);
+bool isPasswordValid(const QString &password);
+bool isContainVlidSymbols(const QString &password);
 
 } // namespace client
 } // namespace space_shooter

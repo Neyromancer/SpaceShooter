@@ -7,7 +7,7 @@
 namespace space_shooter {
 namespace client {
 
-static bool isNameValid(const QString &name) {
+bool isNameValid(const QString &name) {
     if (name.isEmpty())
         return false;
 
@@ -16,7 +16,7 @@ static bool isNameValid(const QString &name) {
     return true;
 }
 
-static bool isEmailValid(const QString &email) {
+bool isEmailValid(const QString &email) {
     QRegExp rx("");
     rx.setCaseSensitivity(Qt::CaseInsensitive);
     if (!rx.exactMatch(email))
@@ -24,7 +24,7 @@ static bool isEmailValid(const QString &email) {
     return true;
 }
 
-static bool isPasswordValid(const QString &password) {
+bool isPasswordValid(const QString &password) {
     if (password.isEmpty())
         return false;
 
@@ -34,7 +34,7 @@ static bool isPasswordValid(const QString &password) {
     return true;
 }
 
-static bool isContainVlidSymbols(const QString &password) {
+bool isContainVlidSymbols(const QString &password) {
     QString valid_symbols = "@!#$%";
     for (const auto &el : password) {
         // change contains to regexpr?
