@@ -4,7 +4,8 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT += core gui
+QT += qml quick
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -13,28 +14,17 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-    #Game.cpp \
-    #SpaceObject.cpp \
-    #EnemyShip.cpp \
-    #UserShip.cpp \
-    #SpaceParticles.cpp \
-    #LaserBeam.cpp \
-    #Screen.cpp \
-    #UISpaceObject.cpp \
-    #UIUserShip.cpp \
-    #UISpaceParticle.cpp
+    controller/signup_processor/signup_processor.cpp \
+    controller/login_processor/login_processor.cpp \
+    utils/utils.cpp
+
 
 HEADERS  += \
-    #SpaceObject.hpp \
-    #Game.hpp \
-    #EnemyShip.hpp \
-    #UserShip.hpp \
-    #LaserBeam.hpp \
-    #SpaceParticles.hpp \
-    #Screen.hpp \
-    #UISpaceObject.hpp \
-    #UIUserShip.hpp \
-    #UISpaceParticle.hpp
+    controller/login_processor/login_processor.h \
+    controller/signup_processor/signup_processor.h \
+    utils/utils.h
+
 
 RESOURCES += \
-    ../res/qrc.qrc
+    ../../gui_qml.qrc
+

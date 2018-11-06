@@ -1,7 +1,6 @@
 #include "utils.h"
 
 #include <QRegExp>
-
 #include <cctype>
 
 namespace space_shooter {

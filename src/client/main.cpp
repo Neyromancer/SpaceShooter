@@ -8,7 +8,7 @@
 #include <QQuickItem>
 #include <QQmlContext>
 
-#include "./model/login_processor/login_processor.h"
+#include "./controller/login_processor/login_processor.h"
 
 int main(int argc, char *argv[])
 {
@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 //                                                           "client::LoginProcessor");
     QQmlApplicationEngine engine;
     engine.rootContext()->setContextProperty("backend", &login_processor);
-    engine.load(QUrl(QStringLiteral("qrc:/LogInInterface.qml")));
+    engine.load(QUrl(QStringLiteral("qrc:/src/client/view/login_processor/LogInterface.qml")));
     engine.addPluginPath(QString("./view/login_processor/"));
 
 //    qDebug() << login_processor.getUserName();

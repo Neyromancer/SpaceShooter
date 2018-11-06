@@ -4,7 +4,7 @@ import QtQuick.Controls 1.4
 import QtQuick.Controls.Styles 1.4
 //import io.qt.client.backend 1.0
 
-import "qrc:/" as Button
+import "qrc:./res/Texture/GuiTextures/" as Button
 
 Window {
     visible: true
