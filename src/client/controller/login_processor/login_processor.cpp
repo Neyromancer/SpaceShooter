@@ -24,7 +24,7 @@ void LoginProcessor::setUserNameAndPassowrd(const QString &name,
     }
 
     auto is_valid_passowrd = true;
-    if (isPasswordValid(password)) {
+    if (!isPasswordValid(password)) {
         is_valid_passowrd = false;
         std::cout << "wrong password" << std::endl;
         emit invalidPassword();

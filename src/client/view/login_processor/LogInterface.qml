@@ -5,8 +5,10 @@ import QtQuick.Controls.Styles 1.4
 //import io.qt.client.backend 1.0
 
 import "qrc:./res/Texture/GuiTextures/" as Button
+import "qrc:./src/client/view/signup_processor/" as SignUpForm
 
 Window {
+    id:root
     visible: true
     x: 100;
     y: 100;
@@ -97,7 +99,7 @@ Window {
             id: sign_in
             button_title: "sign in"
             x: main_form.x + 10
-            y: password.x + password.height + 100
+            y: password.y + password.height + 25
 
             onButtonClicked: {
                 backend.setUserNameAndPassowrd(name.text, password.text)
@@ -107,9 +109,23 @@ Window {
 
         Button.Button {
             id: sign_up
-            button_title: "sing up"
+            button_title: "sign up"
             x: sign_in.x + sign_in.width + 100
-            y: password.x + password.height + 100
+            y: password.y + password.height + 25
+
+            onButtonClicked: {
+                signupInterfase.visible = true
+                root.visible = false
+            }
+        }
+
+        SignUpForm.SignUpInterface {
+            id: signupInterfase
+
+            onClosing: {
+                root.visible = true
+                sign_up.color = "lightsteelblue"
+            }
         }
 
         Connections {

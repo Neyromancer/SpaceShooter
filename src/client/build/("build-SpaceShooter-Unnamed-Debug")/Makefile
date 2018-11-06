@@ -377,6 +377,8 @@ compiler_rcc_clean:
 	-$(DEL_FILE) qrc_gui_qml.cpp
 qrc_gui_qml.cpp: ../../../../gui_qml.qrc \
 		/usr/lib/qt5/bin/rcc \
+		../../view/signup_processor/MainForm.ui.qml \
+		../../view/signup_processor/SignUpInterface.qml \
 		../../view/login_processor/MainForm.ui.qml \
 		../../view/login_processor/LogInterface.qml \
 		../../../../res/Texture/GuiTextures/Button.qml
