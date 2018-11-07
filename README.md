@@ -45,15 +45,15 @@ non static visible very small particles ( can't be interated with ).
       Attributes:
         - health
         - score
-        + timre
-        + scene
-        + player ( user )
+        - timer
+        - scene
+        - player ( user )
         - enemy
       Methods:
         - startGame();
         - pauseGame();
         - quitGame();
-        + createEnemies();
+        - createEnemies();
         
      SpaceShip:
       Descript: describe ships, will be inherited by player's and  enemies' spaceships
