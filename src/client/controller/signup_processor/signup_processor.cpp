@@ -7,23 +7,46 @@
 
 #include "./utils/utils.h"
 
+#include <QDebug>
+
+#include <string>
+
 namespace space_shooter {
 namespace client {
 
 SignupProcessor::SignupProcessor()
-    : email_{}, is_signup_correct_{false} {}
+    : email_{}, login_{}, is_signup_correct_{false} {}
 
-bool SignupProcessor::isPasswordConfirmed(const QString &password,
-                                          const QString &password_confirmation)
-{
-    if (password != password_confirmation)
-        return false;
-    return true;
+void SignupProcessor::setLoginExist(bool is_login_exist) {
+    if (!is_login_exist) {
+        emit invalidLoginName();
+    } else {
+        is_signup_correct_ = is_login_exist;
+        emit validLoginName();
+    }
 }
 
-void SignupProcessor::setNameEmailAndPassword(const QString &name,
-                                              const QString &email,
-                                              const QString &password) {
+QString SignupProcessor::createLogin(const QString &name, const QString &email) {
+    qDebug() << "name " << name;
+    qDebug() << "email " << email;
+    QString res{};
+    if (!name.isEmpty() && !email.isEmpty()) {
+        auto indx = 0;
+        QString scnd_res_part {};
+        if ((indx = email.indexOf('@')) > 0)
+            scnd_res_part = email.left(indx);
+
+        res = name + "_" + scnd_res_part;
+    }
+
+    return res;
+}
+
+void SignupProcessor::setNameEmailLoginAndPassword(const QString &name,
+                                                   const QString &email,
+                                                   const QString &login,
+                                                   const QString &password) {
+
     auto is_valid_name = true;
     if (!isNameValid(name)) {
         is_valid_name = false;
@@ -34,6 +57,12 @@ void SignupProcessor::setNameEmailAndPassword(const QString &name,
     if (!isEmailValid(email)) {
         is_valid_email = false;
         emit invalidEmail();
+    }
+
+    auto is_valid_login = true;
+    if (login.isEmpty()) {
+        is_valid_login = false;
+        emit invalidLoginName();
     }
 
     auto is_valid_password = true;
@@ -47,6 +76,16 @@ void SignupProcessor::setNameEmailAndPassword(const QString &name,
         setUserNameAndPassowrd(name, password);
         email_ = email;
     }
+}
+
+bool SignupProcessor::isPasswordConfirmed(const QString &password,
+                                          const QString &password_confirmation)
+{
+    if (password != password_confirmation) {
+        emit invalidPasswordConfirmation();
+        return false;
+    }
+    return true;
 }
 
 }   // namesapce client

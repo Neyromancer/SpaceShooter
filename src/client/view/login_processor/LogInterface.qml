@@ -133,18 +133,27 @@ Window {
             onInvalidUserName: {
                 invalidName.text = "invalid user name"
             }
+
             onInvalidPassword: {
                 invalidPassword.text = "invalid password"
             }
+
+            onInvalidPasswordUserBlock: {
+                invalidPassword.text = "password and user does not match"
+            }
+
+            onValidPasswordUserBlock: {
+                root.visible = false
+            }
         }
 
-        function invalidUserName() {
-            console.log("invalid user name")
-        }
+//        function invalidUserName() {
+//            console.log("invalid user name")
+//        }
 
-        function invalidPassword() {
-            console.log("invalid password")
-        }
+//        function invalidPassword() {
+//            console.log("invalid password")
+//        }
     }
 }
 

@@ -10,14 +10,15 @@ bool isNameValid(const QString &name) {
     if (name.isEmpty())
         return false;
 
-    if (name.size() <= 4 || name.size() >= 250)
+    if (name.size() < 3 || name.size() >= 250)
         return false;
     return true;
 }
 
 bool isEmailValid(const QString &email) {
-    QRegExp rx("");
+    QRegExp rx("\\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}\\b");
     rx.setCaseSensitivity(Qt::CaseInsensitive);
+    rx.setPatternSyntax(QRegExp::RegExp);
     if (!rx.exactMatch(email))
         return false;
     return true;

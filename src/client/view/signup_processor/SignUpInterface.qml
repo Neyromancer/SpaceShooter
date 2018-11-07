@@ -30,6 +30,7 @@ Window {
 
             onTextChanged: {
                 invalidName.text = ""
+                login.text = signup.createLogin(name.text, email.text)
             }
         }
 
@@ -67,6 +68,7 @@ Window {
 
             onTextChanged: {
                 invalidEmail.text = ""
+                login.text = signup.createLogin(name.text, email.text)
             }
         }
 
@@ -219,6 +221,45 @@ Window {
             button_title: "sign up"
             x: back.x + back.width + 100;
             y: passwordConfirmation.y + passwordConfirmation.height + 25
+
+            onButtonClicked: {
+                (signup.isPasswordConfirmed(password.text,
+                                           passwordConfirmation.text)) ?
+                 signup.setNameEmailAndPassword(name.text, email.text,
+                                                password.text) : ""
+
+            }
+        }
+
+        Connections {
+            target: signup
+            onInvalidUserName: {
+                invalidName.text = "invalid user name"
+            }
+
+            onInvalidPassword: {
+                invalidPassword.text = "invalid password"
+            }
+
+            onInvalidEmail: {
+                invalidEmail.text = "invalid email"
+            }
+
+            onInvalidPasswordConfirmation: {
+                invalidPasswordConfirmation.text = "entered passwords are not equal"
+            }
+
+            onInvalidLoginName: {
+                invalidLogin.text = "invalid login"
+            }
+
+            onValidLoginName: {
+                root.visible = false
+            }
+        }
+
+        function getLoginName() {
+            return signup.createLogin(name.text, email.text)
         }
     }
 }

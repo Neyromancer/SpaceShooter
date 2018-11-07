@@ -7,6 +7,7 @@
 #define SPACE_SHOOTER_CLIENT_CONTROLLER_SIGNUP_PROCESSOR_SIGNUP_PROCESSOR_H_
 
 #include <QObject>
+#include <QString>
 
 #include "../login_processor/login_processor.h"
 
@@ -17,9 +18,11 @@ class SignupProcessor : public LoginProcessor {
     Q_OBJECT
 //    Q_PROPERTY(QString userName MEMBER user_name_ NOTIFY invalidUserName)
 //    Q_PROPERTY(QString password MEMBER password_ NOTIFY invalidPassword)
+    Q_PROPERTY(QString email MEMBER email_ NOTIFY invalidEmail)
     Q_PROPERTY(QString password_confirmation MEMBER password_confirmation_
                NOTIFY invalidPasswordConfirmation)
-    Q_PROPERTY(QString email MEMBER email_ NOTIFY invalidEmail)
+    Q_PROPERTY(QString login MEMBER login_ NOTIFY invalidLoginName)
+
  public:
     // \brief SignupProcessor constructor.
     explicit SignupProcessor();
@@ -45,25 +48,26 @@ class SignupProcessor : public LoginProcessor {
     /// \return SignupProcessor class object.
     SignupProcessor &operator=(SignupProcessor &&signup) = default;
 
-    /// \brief Validates password.
-    /// \param [in] password Firsty entered password.
-    /// \param [in] password_confirmation Secondly entered password.
-    Q_INVOKABLE bool isPasswordConfirmed(const QString &password,
-                                         const QString &password_confirmation);
+
+    /// \brief Set user login name condition.
+    /// \param [in] is_login_exist User login name condition.
+    void setLoginExist(bool is_login_exist);
+
+    /// \brief Offer possible login.
+    /// \param [in] name User name.
+    /// \param [in] email User email.
+    /// \param [out] Login name.
+    Q_INVOKABLE QString createLogin(const QString &name, const QString &email);
 
     /// \brief Set user's name, email and passwords (original and confirmation).
     /// \param [in] name User name.
     /// \param [in] email User email address.
+    /// \param [in] login Login.
     /// \param [in] password Password.
-    Q_INVOKABLE void setNameEmailAndPassword(const QString &name,
-                                             const QString &email,
-                                             const QString &password);
-
-//    /// \brief Return user name.
-//    /// \return User name.
-//    inline QString getUserName() const noexcept {
-//        return user_name_;
-//    }
+    Q_INVOKABLE void setNameEmailLoginAndPassword(const QString &name,
+                                                  const QString &email,
+                                                  const QString &login,
+                                                  const QString &password);
 
     /// \brief Return user email address.
     /// \return Email address.
@@ -71,11 +75,18 @@ class SignupProcessor : public LoginProcessor {
         return email_;
     }
 
-//    /// \brief Return password.
-//    /// \return Passowrd.
-//    inline QString getPassowrd() const noexcept {
-//        return password_;
-//    }
+    /// \brief Return login.
+    /// return Login.
+    inline QString getLogin() const noexcept {
+        return login_;
+    }
+
+    /// \brief Validates password.
+    /// \param [in] password Firsty entered password.
+    /// \param [in] password_confirmation Secondly entered password.
+    /// \return Result of comparison password and password_confirmation.
+    Q_INVOKABLE bool isPasswordConfirmed(const QString &password,
+                                         const QString &password_confirmation);
 
     /// \brief Return result of signup form validation.
     /// \return Result of validation.
@@ -84,23 +95,23 @@ class SignupProcessor : public LoginProcessor {
     }
 
  signals:
-//    /// \brief Emit signal on ivalid user name.
-//    void invalidUserName();
 
     /// \brief Emit signal on invalid ematil.
     void invalidEmail();
 
-//    /// \brief Emit signal on invalid password.
-//    void invalidPassword();
+    /// \brief Emit signal on invalid login.
+    void invalidLoginName();
 
     /// \brief Emit signal on invalid passowrd confirmation.
     void invalidPasswordConfirmation();
 
+    /// \brief Emit signal on entering valid signup parameters.
+    void validLoginName();
+
  private:
-//    QString user_name_;
     QString email_;
-//    QString password_;
     QString password_confirmation_;
+    QString login_;
     bool is_signup_correct_;
 };
 

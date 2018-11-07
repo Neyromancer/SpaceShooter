@@ -37,6 +37,15 @@ void LoginProcessor::setUserNameAndPassowrd(const QString &name,
     }
 }
 
+void LoginProcessor::setUserPasswordMatch(bool user_password_match = false) {
+    if (!user_password_match) {
+        emit invalidPasswordUserBlock();
+    } else {
+        is_login_correct_ = user_password_match;
+        emit validPasswordUserBlock();
+    }
+}
+
 }   // namespace client
 }   // namespace space_shooter
 

@@ -19,6 +19,11 @@ class LoginProcessor : public QObject {
     Q_OBJECT
     Q_PROPERTY(QString userName MEMBER user_name_ NOTIFY invalidUserName)
     Q_PROPERTY(QString password MEMBER password_ NOTIFY invalidPassword)
+    Q_PROPERTY(bool is_login_correct MEMBER is_login_correct_
+               NOTIFY invalidPasswordUserBlock)
+    // this might not correctly
+    Q_PROPERTY(bool is_login_correct MEMBER is_login_correct_
+               NOTIFY validPasswordUserBlock)
  public:
     /// \brief LoginPorcessor constructor.
     explicit LoginProcessor();
@@ -27,28 +32,32 @@ class LoginProcessor : public QObject {
     ~LoginProcessor() = default;
 
     /// \brief LoginPorcessor copy constructor.
-    /// \param[in] login Class LoginProcessor object.
+    /// \param [in] login Class LoginProcessor object.
     LoginProcessor(const LoginProcessor &login) = delete;
 
     /// \brief LoginPorcessor move constructor.
-    /// \param[in] login Class LoginProcessor object.
+    /// \param [in] login Class LoginProcessor object.
     LoginProcessor(LoginProcessor &&login) = default;
 
     /// \brief LoginPorcessor copy assignment.
-    /// \param[in] login Class LoginProcessor object.
+    /// \param [in] login Class LoginProcessor object.
     /// \return login. LoginProcessor object.
     LoginProcessor &operator=(const LoginProcessor &login) = delete;
 
     /// \brief LoginPorcessor move assignment.
-    /// \param[in] login Class LoginProcessor object.
+    /// \param [in] login Class LoginProcessor object.
     /// \return login. LoginProcessor object.
     LoginProcessor &operator=(LoginProcessor &&login) = default;
 
     /// \brief Set user name and password.
-    /// \param[in] name User name.
-    /// \param[in] password Passowrd.
+    /// \param [in] name User name.
+    /// \param [in] password Passowrd.
     Q_INVOKABLE void setUserNameAndPassowrd(const QString &name,
                                             const QString &password);
+
+    /// \brief Set user and password confirmity.
+    /// \param [in] user_password_match User and password match.
+    void setUserPasswordMatch(bool user_password_match);
 
     /// \brief Return user name.
     /// \return User name.
@@ -74,6 +83,12 @@ class LoginProcessor : public QObject {
 
     /// \brief Emit signal on invalid password.
     void invalidPassword();
+
+    /// \brief Emity signal on invalid password user confirmity.
+    void invalidPasswordUserBlock();
+
+    /// \brief Emity signal on valid password user confirmity.
+    void validPasswordUserBlock();
 
  private:
     QString user_name_;
