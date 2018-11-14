@@ -11,9 +11,13 @@
 
 #include "../login_processor/login_processor.h"
 
+/// \namespace space_shooter
 namespace space_shooter {
+/// \namespace client
 namespace client {
 
+/// \class SignupPorcessor.
+/// \brief Exchange information between QML GUI and Qt back.
 class SignupProcessor : public LoginProcessor {
     Q_OBJECT
 //    Q_PROPERTY(QString userName MEMBER user_name_ NOTIFY invalidUserName)
@@ -82,7 +86,7 @@ class SignupProcessor : public LoginProcessor {
     }
 
     /// \brief Validates password.
-    /// \param [in] password Firsty entered password.
+    /// \param [in] password. Firsty entered password.
     /// \param [in] password_confirmation Secondly entered password.
     /// \return Result of comparison password and password_confirmation.
     Q_INVOKABLE bool isPasswordConfirmed(const QString &password,

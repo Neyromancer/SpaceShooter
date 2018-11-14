@@ -6,6 +6,8 @@
 namespace space_shooter {
 namespace client {
 
+static bool isContainVlidSymbols(const QString &password);
+
 bool isNameValid(const QString &name) {
     if (name.isEmpty())
         return false;

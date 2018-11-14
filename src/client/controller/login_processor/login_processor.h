@@ -12,9 +12,13 @@
 #include <string>   // remove after debugging
 #include <iostream> // remove after debugging
 
+/// \namespace space_shooter
 namespace space_shooter {
+/// \namespace client
 namespace client {
 
+/// \class LoginProcessor.
+/// \brief Exchange information between QML GUI and Qt back.
 class LoginProcessor : public QObject {
     Q_OBJECT
     Q_PROPERTY(QString userName MEMBER user_name_ NOTIFY invalidUserName)
