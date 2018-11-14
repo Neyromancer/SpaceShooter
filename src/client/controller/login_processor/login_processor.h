@@ -21,7 +21,7 @@ class LoginProcessor : public QObject {
     Q_PROPERTY(QString password MEMBER password_ NOTIFY invalidPassword)
     Q_PROPERTY(bool is_login_correct MEMBER is_login_correct_
                NOTIFY invalidPasswordUserBlock)
-    // this might not correctly
+    // this might not work correctly
     Q_PROPERTY(bool is_login_correct MEMBER is_login_correct_
                NOTIFY validPasswordUserBlock)
  public:
@@ -84,10 +84,10 @@ class LoginProcessor : public QObject {
     /// \brief Emit signal on invalid password.
     void invalidPassword();
 
-    /// \brief Emity signal on invalid password user confirmity.
+    /// \brief Emit signal on invalid password user confirmity.
     void invalidPasswordUserBlock();
 
-    /// \brief Emity signal on valid password user confirmity.
+    /// \brief Emit signal on valid password user confirmity.
     void validPasswordUserBlock();
 
  private:
@@ -100,4 +100,3 @@ class LoginProcessor : public QObject {
 } // namespace space_shooter
 
 #endif // SPACE_SHOOTER_CLIENT_CONTROLLER_LOGIN_PROCESSOR_LOGIN_PROCESSOR_H_
-
