@@ -9,7 +9,7 @@
 #include <QObject>
 #include <QString>
 
-#include "../login_processor/login_processor.h"
+#include "../login_processor/signin_processor.h"
 
 /// \namespace space_shooter
 namespace space_shooter {

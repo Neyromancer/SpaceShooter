@@ -14,15 +14,17 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
+    controller/signin_processor/signin_processor.cpp \
     controller/signup_processor/signup_processor.cpp \
-    controller/login_processor/login_processor.cpp \
-    utils/utils.cpp
+    utils/utils.cpp \
+#    controller/client/engine.cpp
 
 
 HEADERS  += \
-    controller/login_processor/login_processor.h \
+    controller/signin_processor/signin_processor.h \
     controller/signup_processor/signup_processor.h \
-    utils/utils.h
+    utils/utils.h \
+#    controller/client/engine.h
 
 
 RESOURCES += \

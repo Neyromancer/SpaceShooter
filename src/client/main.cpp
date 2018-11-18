@@ -8,7 +8,7 @@
 #include <QQuickItem>
 #include <QQmlContext>
 
-#include "./controller/login_processor/login_processor.h"
+#include "./controller/login_processor/signin_processor.h"
 #include "./controller/signup_processor/signup_processor.h"
 
 int main(int argc, char *argv[])
