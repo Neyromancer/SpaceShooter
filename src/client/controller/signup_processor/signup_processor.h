@@ -9,7 +9,7 @@
 #include <QObject>
 #include <QString>
 
-#include "../login_processor/signin_processor.h"
+#include "../signin_processor/signin_processor.h"
 
 /// \namespace space_shooter
 namespace space_shooter {
@@ -18,14 +18,14 @@ namespace client {
 
 /// \class SignupPorcessor.
 /// \brief Exchange information between QML GUI and Qt back.
-class SignupProcessor : public LoginProcessor {
+class SignupProcessor : public SigninProcessor {
     Q_OBJECT
 //    Q_PROPERTY(QString userName MEMBER user_name_ NOTIFY invalidUserName)
 //    Q_PROPERTY(QString password MEMBER password_ NOTIFY invalidPassword)
     Q_PROPERTY(QString email MEMBER email_ NOTIFY invalidEmail)
     Q_PROPERTY(QString password_confirmation MEMBER password_confirmation_
                NOTIFY invalidPasswordConfirmation)
-    Q_PROPERTY(QString login MEMBER login_ NOTIFY invalidLoginName)
+    Q_PROPERTY(QString login MEMBER signin_ NOTIFY invalidLoginName)
 
  public:
     // \brief SignupProcessor constructor.
@@ -82,7 +82,7 @@ class SignupProcessor : public LoginProcessor {
     /// \brief Return login.
     /// return Login.
     inline QString getLogin() const noexcept {
-        return login_;
+        return signin_;
     }
 
     /// \brief Validates password.
@@ -115,7 +115,7 @@ class SignupProcessor : public LoginProcessor {
  private:
     QString email_;
     QString password_confirmation_;
-    QString login_;
+    QString signin_;
     bool is_signup_correct_;
 };
 

@@ -17,14 +17,14 @@ SOURCES += main.cpp\
     controller/signin_processor/signin_processor.cpp \
     controller/signup_processor/signup_processor.cpp \
     utils/utils.cpp \
-#    controller/client/engine.cpp
+    controller/engine/engine.cpp
 
 
 HEADERS  += \
     controller/signin_processor/signin_processor.h \
     controller/signup_processor/signup_processor.h \
     utils/utils.h \
-#    controller/client/engine.h
+    controller/engine/engine.h
 
 
 RESOURCES += \

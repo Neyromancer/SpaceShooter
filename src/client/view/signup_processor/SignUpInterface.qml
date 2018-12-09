@@ -100,7 +100,7 @@ Window {
             width: 250
 
             selectByMouse: false
-            placeholderText: qsTr("Enter login")
+            placeholderText: qsTr("Enter Signin")
             maximumLength: 128
 
             onTextChanged: {
@@ -226,7 +226,7 @@ Window {
                 (signup.isPasswordConfirmed(password.text,
                                            passwordConfirmation.text)) ?
                  signup.setNameEmailAndPassword(name.text, email.text,
-                                                password.text) : ""
+                                                login.text, password.text) : ""
 
             }
         }
@@ -250,7 +250,7 @@ Window {
             }
 
             onInvalidLoginName: {
-                invalidLogin.text = "invalid login"
+                invalidLogin.text = "invalid signin"
             }
 
             onValidLoginName: {

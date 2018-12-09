@@ -1,4 +1,4 @@
-/// \file login_processor.h
+/// \file signin_processor.h
 /// \brief
 /// \author
 /// \date 23.10.2018
@@ -10,10 +10,10 @@
 namespace space_shooter {
 namespace client {
 
-LoginProcessor::LoginProcessor()
-    : user_name_{}, password_{}, is_login_correct_{false} {}
+SigninProcessor::SigninProcessor()
+    : user_name_{}, password_{}, is_signin_correct_{false} {}
 
-void LoginProcessor::setUserNameAndPassowrd(const QString &name,
+void SigninProcessor::setUserNameAndPassowrd(const QString &name,
                                             const QString &password) {
     // the following varaibles will be removed later
     auto is_valid_name = true;
@@ -31,22 +31,23 @@ void LoginProcessor::setUserNameAndPassowrd(const QString &name,
     }
 
     if (is_valid_name && is_valid_passowrd) {
-        is_login_correct_ = true;
+        is_signin_correct_ = true;
         user_name_ = name;
+        std::cout << "user_name " << name.toStdString() << std::endl;
         password_ = password;
+        std::cout << "password " << password.toStdString() << std::endl;
+        emit validPasswordUserBlock(name, password);
     }
 }
 
-void LoginProcessor::setUserPasswordMatch(bool user_password_match = false) {
+void SigninProcessor::setUserPasswordMatch(bool user_password_match = false) {
     if (!user_password_match) {
         emit invalidPasswordUserBlock();
     } else {
-        is_login_correct_ = user_password_match;
-        emit validPasswordUserBlock();
+        is_signin_correct_ = user_password_match;
+//        emit validPasswordUserBlock();
     }
 }
 
 }   // namespace client
 }   // namespace space_shooter
-
-
