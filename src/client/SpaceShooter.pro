@@ -21,7 +21,8 @@ SOURCES += main.cpp\
     ./controller/engine/engine.cpp \
     /home/dmitry/workspace/git/socket_communication/src/tcp_connection/tcp_connection.cpp \
     /home/dmitry/workspace/git/socket_communication/src/connection/connection.cpp \
-    /home/dmitry/workspace/git/socket_communication/src/socket/socket.cpp
+    /home/dmitry/workspace/git/socket_communication/src/socket/socket.cpp \
+    controller/space_object/space_object.cpp
 
 
 HEADERS  += \
@@ -32,7 +33,9 @@ HEADERS  += \
     ./utils/utils.h \
     /home/dmitry/workspace/git/socket_communication/src/tcp_connection/tcp_connection.h \
     /home/dmitry/workspace/git/socket_communication/src/connection/connection.h \
-    /home/dmitry/workspace/git/socket_communication/src/socket/socket.h
+    /home/dmitry/workspace/git/socket_communication/src/socket/socket.h \
+    controller/user_ship/user_ship.h \
+    controller/space_object/space_object.h
 
 
 RESOURCES += \

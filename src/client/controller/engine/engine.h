@@ -3,8 +3,8 @@
 /// \author
 /// \data 18.11.2018
 
-#ifndef SPACE_SHOOTER_CLIENT_CONTROLLER_CLIENT_ENGINE_H_
-#define SPACE_SHOOTER_CLIENT_CONTROLLER_CLIENT_ENGINE_H_
+#ifndef SPACE_SHOOTER_CLIENT_CONTROLLER_ENGINE_ENGINE_H_
+#define SPACE_SHOOTER_CLIENT_CONTROLLER_ENGINE_ENGINE_H_
 
 #include <QObject>
 #include <QString>
@@ -25,6 +25,7 @@ class Engine: public QObject {
 
  public:
   /// \brief Engine constructor.
+  /// \param object Class QObject object.
   Engine(QObject *object = 0);
 
   /// \brief Engine destructor.
@@ -86,4 +87,4 @@ class Engine: public QObject {
 } // namespace client
 } // namespace space_shooter
 
-#endif // SPACE_SHOOTER_CLIENT_CONTROLLER_CLIENT_ENGINE_H_
+#endif // SPACE_SHOOTER_CLIENT_CONTROLLER_ENGINE_ENGINE_H_
