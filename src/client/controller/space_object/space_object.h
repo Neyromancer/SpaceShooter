@@ -110,7 +110,7 @@ class SpaceObject {
   /// \brief Move to the down.
   void MoveDown();
 
-  virtual void changeHealth() = 0;
+  virtual void ChangeHealth() = 0;
 
 /* move to graphic representation class
 public slots:
