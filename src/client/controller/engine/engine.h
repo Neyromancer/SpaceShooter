@@ -48,9 +48,27 @@ class Engine: public QObject {
   /// \return class Engine object.
   Engine &operator=(Engine &&engine) = default;
 
+  /// \brief Send user info.
+  /// \param[in] name User name.
+  /// \param[in] password User password.
+  /// \param[in] email User email.
+  /// \param[in] login User login.
+  void sendUserInfo(const QString &);
+
  public slots:
-  /// \brief Expose signin, signup user interface.
-  void sendUserInfo(QString name, QString password);
+  /// \brief Expose signin user interface.
+  /// \param[in] name User name.
+  /// \param[in] password User password.
+  void signInSendWrapper(QString name, QString password);
+
+  /// \brief Expose signup user interface.
+  /// \param[in] name User name.
+  /// \param[in] password User password.
+  /// \param[in] email User email.
+  /// \param[in] login User login.
+  void signUpSendWrapper(QString name, QString password, QString email,
+                         QString login);
+
  private:
   ClientEngineConnectionSetter client_engine_setter_;
 };

@@ -25,7 +25,7 @@ class SignupProcessor : public SigninProcessor {
     Q_PROPERTY(QString email MEMBER email_ NOTIFY invalidEmail)
     Q_PROPERTY(QString password_confirmation MEMBER password_confirmation_
                NOTIFY invalidPasswordConfirmation)
-    Q_PROPERTY(QString login MEMBER signin_ NOTIFY invalidLoginName)
+    Q_PROPERTY(QString login MEMBER login_ NOTIFY invalidLoginName)
 
  public:
     // \brief SignupProcessor constructor.
@@ -82,7 +82,7 @@ class SignupProcessor : public SigninProcessor {
     /// \brief Return login.
     /// return Login.
     inline QString getLogin() const noexcept {
-        return signin_;
+        return login_;
     }
 
     /// \brief Validates password.
@@ -112,10 +112,14 @@ class SignupProcessor : public SigninProcessor {
     /// \brief Emit signal on entering valid signup parameters.
     void validLoginName();
 
+    /// \brief Emit signal on valid user, email, password and login confirmity.
+    void validUserEmailPasswordBlock(QString name, QString password, QString email,
+                                     QString login);
+
  private:
     QString email_;
     QString password_confirmation_;
-    QString signin_;
+    QString login_;
     bool is_signup_correct_;
 };
 

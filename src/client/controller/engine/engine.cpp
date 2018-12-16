@@ -32,9 +32,28 @@ namespace client {
 Engine::Engine(QObject *object)
     : QObject(object) {}
 
-void Engine::sendUserInfo(QString name, QString password) {
-    std::cout << "name: " << name.toStdString() << std::endl;
-    std::cout << "password: " << password.toStdString() << std::endl;
+// this data serialization looks ugly, rewrite it.
+void Engine::signInSendWrapper(QString name, QString password) {
+    QString res {};
+    res += "c0";
+    res += "|u" + name;
+    res += "|p" + password;
+    sendUserInfo(res);
+}
+
+// this data serialization looks ugly, rewrite it.
+void Engine::signUpSendWrapper(QString name, QString password, QString email,
+                               QString login) {
+    QString res {};
+    res += "c0";
+    res += "|u" + name;
+    res += "|p" + password;
+    res += "|e" + email;
+    res += "|l" + login;
+    sendUserInfo(res);
+}
+
+void Engine::sendUserInfo(const QString &vc) {
     client_engine_setter_.ParseConfigureFile();
     socket_communication::TcpConnection tcp_connect{};
     tcp_connect.SetSocket(AF_INET, SOCK_STREAM, 0);
@@ -42,20 +61,20 @@ void Engine::sendUserInfo(QString name, QString password) {
     tcp_connect.SetPort(client_engine_setter_.GetPort());
     if (tcp_connect.Connect()) {
         std::cout << "connected" << std::endl;
-        QVector<QString> vc;
-        vc.push_back(name);
-        vc.push_back(password);
-        while (!vc.isEmpty()) {
+//        auto i = 0;
+//        do {
             std::cout << "sending..." << std::endl;
-            if (tcp_connect.Send(vc.at(0).toStdString())) {
-                std::cout << vc.at(0).toStdString() << " sent" << std::endl;
-                vc.pop_front();
-            }
-            std::this_thread::sleep_for(std::chrono::seconds(1));
+//            std::this_thread::sleep_for(std::chrono::seconds(1));
+        if (tcp_connect.Send(vc.toStdString())) {
+             std::cout << vc.toStdString() << " sent" << std::endl;
+//                vc.pop_front();
+//                ++i;
         }
+//        } while (i < vc.size());
+    } else {
+        std::cout << "Couldn't connect to a socket "
+                  << tcp_connect.GetSocket().GetSocket() << std::endl;
     }
-    std::cout << "Couldn't connect to a socket "
-              << tcp_connect.GetSocket().GetSocket() << std::endl;
 
 }
 

@@ -100,7 +100,7 @@ Window {
             width: 250
 
             selectByMouse: false
-            placeholderText: qsTr("Enter Signin")
+            placeholderText: qsTr("Enter login")
             maximumLength: 128
 
             onTextChanged: {
@@ -225,7 +225,7 @@ Window {
             onButtonClicked: {
                 (signup.isPasswordConfirmed(password.text,
                                            passwordConfirmation.text)) ?
-                 signup.setNameEmailAndPassword(name.text, email.text,
+                 signup.setNameEmailLoginAndPassword(name.text, email.text,
                                                 login.text, password.text) : ""
 
             }

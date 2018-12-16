@@ -15,7 +15,7 @@ namespace space_shooter {
 namespace client {
 
 SignupProcessor::SignupProcessor()
-    : email_{}, signin_{}, is_signup_correct_{false} {}
+    : email_{}, login_{}, is_signup_correct_{false} {}
 
 void SignupProcessor::setLoginExist(bool is_login_exist) {
     if (!is_login_exist) {
@@ -67,6 +67,8 @@ void SignupProcessor::setNameEmailLoginAndPassword(const QString &name,
     if (login.isEmpty()) {
         is_valid_login = false;
         emit invalidLoginName();
+    } else {
+        login_ = login;
     }
 
     auto is_valid_password = true;
@@ -79,6 +81,7 @@ void SignupProcessor::setNameEmailLoginAndPassword(const QString &name,
         is_signup_correct_ = true;
         setUserNameAndPassowrd(name, password);
         email_ = email;
+        emit validUserEmailPasswordBlock(name, password, email, login);
     }
 }
 
