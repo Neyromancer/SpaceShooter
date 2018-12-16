@@ -17,41 +17,41 @@ namespace space_shooter {
 /// \namespace client
 namespace client {
 
-/// \class LoginProcessor.
+/// \class SigninProcessor.
 /// \brief Exchange information between QML GUI and Qt back.
-class LoginProcessor : public QObject {
+class SigninProcessor : public QObject {
     Q_OBJECT
     Q_PROPERTY(QString userName MEMBER user_name_ NOTIFY invalidUserName)
     Q_PROPERTY(QString password MEMBER password_ NOTIFY invalidPassword)
-    Q_PROPERTY(bool is_login_correct MEMBER is_login_correct_
+    Q_PROPERTY(bool is_signin_incorrect MEMBER is_signin_correct_
                NOTIFY invalidPasswordUserBlock)
     // this might not work correctly
-    Q_PROPERTY(bool is_login_correct MEMBER is_login_correct_
+    Q_PROPERTY(bool is_signin_correct MEMBER is_signin_correct_
                NOTIFY validPasswordUserBlock)
  public:
-    /// \brief LoginPorcessor constructor.
-    explicit LoginProcessor();
+    /// \brief SigninPorcessor constructor.
+    explicit SigninProcessor();
 
-    /// \brief LoginPorcessor destructor.
-    ~LoginProcessor() = default;
+    /// \brief SigninPorcessor destructor.
+    ~SigninProcessor() = default;
 
     /// \brief LoginPorcessor copy constructor.
     /// \param [in] login Class LoginProcessor object.
-    LoginProcessor(const LoginProcessor &login) = delete;
+    SigninProcessor(const SigninProcessor &login) = delete;
 
-    /// \brief LoginPorcessor move constructor.
-    /// \param [in] login Class LoginProcessor object.
-    LoginProcessor(LoginProcessor &&login) = default;
+    /// \brief SigninPorcessor move constructor.
+    /// \param [in] login Class SigninProcessor object.
+    SigninProcessor(SigninProcessor &&login) = default;
 
-    /// \brief LoginPorcessor copy assignment.
-    /// \param [in] login Class LoginProcessor object.
-    /// \return login. LoginProcessor object.
-    LoginProcessor &operator=(const LoginProcessor &login) = delete;
+    /// \brief SigninPorcessor copy assignment.
+    /// \param [in] login Class SigninProcessor object.
+    /// \return login. SigninProcessor object.
+    SigninProcessor &operator=(const SigninProcessor &login) = delete;
 
-    /// \brief LoginPorcessor move assignment.
-    /// \param [in] login Class LoginProcessor object.
-    /// \return login. LoginProcessor object.
-    LoginProcessor &operator=(LoginProcessor &&login) = default;
+    /// \brief SigninPorcessor move assignment.
+    /// \param [in] login Class SigninProcessor object.
+    /// \return login. SigninProcessor object.
+    SigninProcessor &operator=(SigninProcessor &&login) = default;
 
     /// \brief Set user name and password.
     /// \param [in] name User name.
@@ -77,8 +77,8 @@ class LoginProcessor : public QObject {
 
     /// \brief Return result of login.
     /// \return Result of login.
-    inline bool isLoginCorrect() const noexcept {
-        return is_login_correct_;
+    inline bool isSigninCorrect() const noexcept {
+        return is_signin_correct_;
     }
 
  signals:
@@ -92,12 +92,12 @@ class LoginProcessor : public QObject {
     void invalidPasswordUserBlock();
 
     /// \brief Emit signal on valid password user confirmity.
-    void validPasswordUserBlock();
+    void validPasswordUserBlock(QString name, QString password);
 
  private:
     QString user_name_;
     QString password_;
-    bool is_login_correct_;
+    bool is_signin_correct_;
 };
 
 } // namespace client

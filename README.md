@@ -35,6 +35,8 @@ faster than main weapon but they can be fired in sequence only with a delay.
 * Background: background-pic ( deep space ), side asteroids ( static, thier 
 appearance is different from non static asteroids ), other static objects and 
 non static visible very small particles ( can't be interated with ). 
+* Client engine should send and recieve data structure with user info and a flag
+sponsible for giving access to the game.
 ```          
   Classes:
   

@@ -1,7 +1,7 @@
 #ifndef USERSHIP_HPP
 #define USERSHIP_HPP
 
-#include "SpaceObject.hpp"
+#include "../space_object/space_object.h"
 
 class UserShip : public SpaceObject {
 

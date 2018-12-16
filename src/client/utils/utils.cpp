@@ -30,6 +30,9 @@ bool isPasswordValid(const QString &password) {
     if (password.isEmpty())
         return false;
 
+    if (password.size() < 8 || password.size() >= 250)
+        return false;
+
     if (!isContainVlidSymbols(password))
         return false;
 

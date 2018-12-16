@@ -1,22 +1,35 @@
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.onj
 *.[oa]
-*~
+
+# Executables
 *.exe
+*.out
+*.app
+
+*~
+
+# DataBase
+*.sql
+*.sqlite
+
+# Temporary files
+*.pri
+*.pro
+*.pro.user
 *.swp
 *.user
 *.autosave
 
-*.sql
-*.sqlite
-*.pri
-*.pro
-*.pro.user
-
+# Makefiles
 Makefile
 CMakeCache.txt
 cmake_install.cmake
-#######################################
-# exclude dirs
-######################################
+
+# Dirs
 # ignore all files in backup directory
 **/html
 **/latex
@@ -27,3 +40,4 @@ cmake_install.cmake
 **/build-space_shooter
 **/build-*
 sour*
+**/test*

@@ -1,85 +1,56 @@
-#include "SpaceObject.hpp"
+/// \file space_object.h
+/// \brief
+/// \author
+/// \data 16.12.2018
 
-SpaceObject::SpaceObject( unsigned int hp, unsigned int spd, unsigned int x, unsigned int y, unsigned int l, unsigned int w )
-    : health( hp ),
-      speed( spd ),
-      coordX( x ),
-      coordY( y ) {
+#include "space_object.h"
+
+namespace space_shooter {
+namespace client {
+
+SpaceObject::SpaceObject(quint16 hp, quint16 spd, quint16 x,
+                         quint16 y, quint16 l, quint16 w)
+    : health_(hp), speed_(spd), coordX_(x), coordY_(y) {
     // empty body
 }
 
-void SpaceObject::setHealth( const unsigned int hp ) {
-    if ( hp > 0 )
-        health = hp;
-    else
-        health = 0;
+void SpaceObject::SetHealth(const quint16 hp) {
+        health_ = hp;
 }
 
-unsigned int SpaceObject::getHealth() const {
-    return health;
+void SpaceObject::SetSpeed(quint16 spd) {
+        speed_ = spd;
 }
 
-void SpaceObject::setSpeed( int spd ) {
-        speed = spd;
+void SpaceObject::SetCoordX(quint16 x) {
+    coordX_ = x;
 }
 
-int SpaceObject::getSpeed() const {
-    return speed;
+void SpaceObject::SetCoordY(quint16 y) {
+    coordY_ = y;
 }
 
-void SpaceObject::setCoordX( unsigned int x ) {
-    coordX = x;
+void SpaceObject::SetSize(quint16 length, quint16 width) {
+  if (length > 0 && width > 0) {
+    length_ = length;
+    width_ = width;
+  }
 }
 
-unsigned int SpaceObject::getCoordX() const {
-    return coordX;
+void SpaceObject::MoveDown() {
+    SetCoordY(GetCoordY() - GetSpeed());
 }
 
-void SpaceObject::setCoordY( unsigned int y ) {
-    coordY = y;
+void SpaceObject::MoveUp() {
+    SetCoordY(GetCoordY() + GetSpeed());
 }
 
-unsigned int SpaceObject::getCoordY() const {
-    return coordY;
+void SpaceObject::MoveRight() {
+    SetCoordX(GetCoordX() + GetSpeed());
 }
 
-void SpaceObject::setWidth( unsigned int w ) {
-    if ( w >= 1 )
-        width = w;
-    else width = 1;
-}
-unsigned int SpaceObject::getWidth() const {
-    return width;
-}
-
-void SpaceObject::setLength( unsigned int l ) {
-    if ( l >= 1 )
-        length = l;
-    else length = 1;
-}
-unsigned int SpaceObject::getLength() const {
-    return length;
-}
-
-
-// ( coord sys starts in top-left corner and y coord directs down)
-void SpaceObject::moveDown() {
-    setCoordY( getCoordY() + getSpeed() );
-}
-
-// ( coord sys starts in top-left corner and y coord directs down)
-void SpaceObject::moveUp() {
-    setCoordY( getCoordY() + getSpeed() );
-}
-
-// ( coord sys starts in top-left corner and y coord directs down)
-void SpaceObject::moveRight() {
-    setCoordX( getCoordX() + getSpeed() );
-}
-
-// ( coord sys starts in top-left corner and y coord directs down)
-void SpaceObject::moveLeft() {
-    setCoordX( getCoordX() + getSpeed() );
+void SpaceObject::MoveLeft() {
+    SetCoordX(GetCoordX() - GetSpeed());
 }
 
 /* move to graphic representation class
@@ -90,7 +61,5 @@ void SpaceObject::draw( const string &url, int randomNum ) {
     setPixmap( object );
 }
 */
-
-SpaceObject::~SpaceObject() {
-
-}
+}  // namespace client
+}  // namespace space_shooter

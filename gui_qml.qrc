@@ -1,8 +1,9 @@
 <RCC>
     <qresource prefix="/">
         <file>res/Texture/GuiTextures/Button.qml</file>
-        <file>src/client/view/login_processor/MainForm.ui.qml</file>
-        <file>src/client/view/login_processor/LogInterface.qml</file>
         <file>src/client/view/signup_processor/SignUpInterface.qml</file>
+        <file>src/client/view/signin_processor/SigninInterface.qml</file>
+        <file>src/client/view/signin_processor/MainForm.ui.qml</file>
+        <file>src/client/view/game_screen/GameScreen.qml</file>
     </qresource>
 </RCC>

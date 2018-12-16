@@ -114,7 +114,7 @@ Window {
             y: password.y + password.height + 25
 
             onButtonClicked: {
-                signupInterfase.visible = true
+               signupInterfase.visible = true
                 root.visible = false
             }
         }

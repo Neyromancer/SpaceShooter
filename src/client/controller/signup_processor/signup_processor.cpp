@@ -46,6 +46,10 @@ void SignupProcessor::setNameEmailLoginAndPassword(const QString &name,
                                                    const QString &email,
                                                    const QString &login,
                                                    const QString &password) {
+    qDebug() << "name " << name;
+    qDebug() << "email " << email;
+    qDebug() << "login " << login;
+    qDebug() << "password " << password;
 
     auto is_valid_name = true;
     if (!isNameValid(name)) {
@@ -63,6 +67,8 @@ void SignupProcessor::setNameEmailLoginAndPassword(const QString &name,
     if (login.isEmpty()) {
         is_valid_login = false;
         emit invalidLoginName();
+    } else {
+        login_ = login;
     }
 
     auto is_valid_password = true;
@@ -75,6 +81,7 @@ void SignupProcessor::setNameEmailLoginAndPassword(const QString &name,
         is_signup_correct_ = true;
         setUserNameAndPassowrd(name, password);
         email_ = email;
+        emit validUserEmailPasswordBlock(name, password, email, login);
     }
 }
 
