@@ -110,7 +110,7 @@ class SpaceObject {
   /// \brief Move to the down.
   void MoveDown();
 
-  virtual void changeHealth( unsigned int = 0 ) = 0;
+  virtual void changeHealth() = 0;
 
 /* move to graphic representation class
 public slots:
@@ -118,8 +118,8 @@ public slots:
 */
 
  private:
-  unsigned int health;
-  int speed;
+  unsigned int health_;
+  int speed_;
   unsigned int length_;
   unsigned int width_;
   unsigned int coordX_;
