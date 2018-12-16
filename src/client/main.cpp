@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
     QObject::connect(&signin_processor,
                      &space_shooter::client::SigninProcessor::validPasswordUserBlock,
                      &client_engine,
-                     &space_shooter::client::Engine::displayInitialUI);
+                     &space_shooter::client::Engine::sendUserInfo);
 
     return app.exec();
 }

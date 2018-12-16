@@ -9,6 +9,7 @@
 #include <QObject>
 #include <QString>
 
+#include "./controller/client_engine_connection_setter/client_engine_connection_setter.h"
 #include "./controller/signin_processor/signin_processor.h"
 #include "./controller/signup_processor/signup_processor.h"
 
@@ -17,7 +18,7 @@ namespace space_shooter {
 /// \namespace client
 namespace client {
 
-/// \client Engine
+/// \class Engine
 /// \brief Client main logic represented here.
 class Engine: public QObject {
   Q_OBJECT
@@ -47,23 +48,11 @@ class Engine: public QObject {
   /// \return class Engine object.
   Engine &operator=(Engine &&engine) = default;
 
-  /// \brief Return class SigninProcessor object.
-//  inline /*const*/ SigninProcessor &getSigninProcessor() {
-//      return signin_processor_;
-//  }
-
-//  /// \brief Return class SignupProcessor object.
-//  inline /*const */SignupProcessor &getSignupProcessor() {
-//      return signup_processor_;
-//  }
  public slots:
   /// \brief Expose signin, signup user interface.
-  void displayInitialUI(QString name, QString password);
-
-// private:
-//  SigninProcessor signin_processor_;
-//  SignupProcessor signup_processor_;
-
+  void sendUserInfo(QString name, QString password);
+ private:
+  ClientEngineConnectionSetter client_engine_setter_;
 };
 
 } // namespace client
