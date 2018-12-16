@@ -55,6 +55,15 @@ class Engine: public QObject {
   /// \param[in] login User login.
   void sendUserInfo(const QString &);
 
+  /// \brief Return user signed-in status.
+  /// \return User signed-in status.
+  inline bool IsSignedIn() const noexcept {
+      return is_signedin_;
+  }
+
+  /// \breif Process game main logic.
+  void ProcessGame();
+
  public slots:
   /// \brief Expose signin user interface.
   /// \param[in] name User name.
@@ -71,6 +80,7 @@ class Engine: public QObject {
 
  private:
   ClientEngineConnectionSetter client_engine_setter_;
+  bool is_signedin_{true}; // change to false
 };
 
 } // namespace client

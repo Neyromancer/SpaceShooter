@@ -22,6 +22,7 @@ int main(int argc, char *argv[])
     space_shooter::client::SignupProcessor signup_processor;
     space_shooter::client::Engine client_engine;
     QQmlApplicationEngine engine;
+/*
     engine.rootContext()->setContextProperty("backend",
                                              &signin_processor);
     engine.rootContext()->setContextProperty("signup",
@@ -42,6 +43,14 @@ int main(int argc, char *argv[])
                      &space_shooter::client::SignupProcessor::validUserEmailPasswordBlock,
                      &client_engine,
                      &space_shooter::client::Engine::signUpSendWrapper);
+*/
+  std::cout << "before if-statement" << std::endl;
+  if (client_engine.IsSignedIn()) {
+      std::cout << "game started" << std::endl;
+    engine.load(QUrl(QStringLiteral("qrc:/src/client/view/game_screen/"
+                                    "GameScreen.qml")));
+    engine.addPluginPath(QString("./view/game_screen/"));
+  }
 
     return app.exec();
 }
